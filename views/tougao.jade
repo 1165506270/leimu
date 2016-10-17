@@ -1,0 +1,51 @@
+//
+   Created by pl on 2016/10/5.
+extends common
+block tougao
+   link(rel='stylesheet', href='/stylesheets/tougao.css')
+   .from.box
+      .from-top
+         h3 投稿作品
+         .rule
+            | 只允许投放本人绘制作品，如原创、同人、二次创作等。禁止代投。
+            br
+            | 如为临摹作品请在标题或者简介处标明临摹。
+            br
+            | 严禁盗图，多次核实盗图将封停账号（与主站账号为同一个，封停将同时封停）。
+            br
+            | 暂不接受非绘图类图片（如摄影作品、视频游戏截图等）。
+            br
+            | 涉及违反相关法律、政治、性爱色情、过度精神污染图片禁止投稿。
+            br
+            | 二次创作建议标注原图相关信息（原图地址、原作者等）。
+            br
+            | 目前画友正在测试阶段，会存在种种问题，我们会尽快修复。暂时24~10点可能存在无法审核现象。带来不便敬请谅解！(〜￣△￣)〜
+            br
+            | 如有使用问题或意见反馈请联系客服邮箱：drawhelp@bilibili.com
+            br
+            | 【哔哩哔哩画友反馈群：384015117】
+       form(method="post",action="/tougao",enctype='multipart/form-data')
+          .title
+             .fl 标题
+             .fr
+                input(type="text",name="title",required)
+                | 0/32
+                p （必填，投稿后不能修改）
+          .pic
+             .fl  上传图片
+             .fr
+                input(type="file",name="img",required)
+                p 8MB以下的JPG（最佳）、PNG、GIF图档都可以上传。
+                  br
+                  | 图片上传后为了统一封面，将进行封面裁剪步骤，原上传作品将不受到裁剪影响。
+          .shuoming
+             .fl 作品说明
+             .fr
+                textarea(style="width:470px;height:100px;",id="comment",name="comment")
+                p
+                  span.fl (选填，投稿后不可修改)
+                  span.fr 0/1000
+          .sumbit
+             input(type="submit",value="确定并发布",id="sumbit")
+   script(src="/javascripts/tougao.js")
+

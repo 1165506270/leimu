@@ -1,0 +1,253 @@
+.borwse-body{
+    width: 100%;
+    background: #1a1a1a;
+    position: relative;
+    overflow-x: hidden;
+    min-height: 675px;
+}
+.borwseMode-nav{
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 5;
+    width: 270px;
+    background: #333;
+    height: 100%;
+    transition: all 0.5s;
+    /*margin-right: -222px;*/
+}
+.borwseMode-siderBtn{
+    width: 12px;
+    height: 124px;
+    position: fixed;
+    top: 400px;
+    cursor: pointer;
+    line-height: 124px;
+    background: url("../images/btn_sider.png")no-repeat 0 0 ;
+}
+.borwseMode-siderBtn-icon{
+    background: url("../images/btn_sider.png")no-repeat 0 -330px;
+    margin-top: 53px;
+    width: 12px;
+    height: 13px;
+}
+.borwseMode-siderBtn-back{
+    width: 12px;
+    height: 124px;
+    position: fixed;
+    top: 400px;
+    cursor: pointer;
+    line-height: 124px;
+    display: none;
+    background: url("../images/btn_sider.png")no-repeat 0 0 ;
+}
+.borwseMode-siderBtn-back-icon{
+    background: url("../images/btn_sider.png")no-repeat 0 -420px;
+    margin-top: 53px;
+    width: 12px;
+    height: 13px;
+}
+.borwseSiderMini{
+    height: 252px;
+    width: 48px;
+    position: fixed;
+    transition: all 0.2s;
+    top: -252px;
+}
+.borwseSiderMini a .icon{
+    width: 48px;
+    height: 48px;
+    display: block;
+    transition: all 0.2s;
+    background: url("../images/Icons2.png")no-repeat
+}
+.borwseSiderMini a:first-of-type{
+    display: block;
+    width: 46px;
+    height: 46px;
+    background: url("../images/noface.gif")no-repeat 0 0 ;
+    border-radius: 23px;
+    background-size: 46px 46px;
+    margin-top: 10px;
+}
+.borwseSiderMini a:nth-of-type(2) .icon{
+    background-position:  4px -802px;
+    transition: all 0.2s;
+    background-color: #f25d8e;
+    margin: 24px 0;
+}
+.borwseSiderMini a:nth-of-type(2) .icon:hover{
+    background-position: 4px -760px;
+}
+.borwseSiderMini a:nth-of-type(3) .icon{
+    background-position: 4px -639px;
+}
+
+.borwseSiderMini a:nth-of-type(3) .icon:hover{
+    transform: rotate(360deg);
+}
+.borwseSiderMini a:nth-of-type(4) .icon{
+    background-position: 4px -596px;
+}
+.borwseSiderMini a:nth-of-type(4) .icon:hover{
+    transform: rotate(360deg);
+}
+.borseSiderBig{
+    width: 100%;
+    position: fixed;
+}
+ .box{
+    width: 238px;
+    height: 170px;
+    margin: 18px 0 20px 16px;
+    background: #424242;
+    position: relative;
+    border-radius: 4px;
+}
+.person .touxiang{
+    padding-left: 16px;
+    padding-top: 10px;
+    float: left;
+}
+.person .touxiang a{
+    display: block;
+    width: 90px;
+    height: 90px;
+    border-radius: 45px;
+    background: url("../images/noface.gif")no-repeat 0 0;
+    border: 2px solid #ddd;
+    background-size: 90px 90px;
+}
+.person .username{
+    font-size: 14px;
+    float: left;
+    color: #fff;
+    margin: 18px 0 0 20px;
+}
+.person .tougao{
+    position: absolute;
+    left: 117px;
+    top:55px
+}
+.person .tougao a{
+    display: block;
+    width: 100px;
+    height: 36px;
+    background: url("../images/btn_mainpink.png")no-repeat 0 -1px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 14px;
+    padding-left: 5px;
+    /*text-align: center;*/
+}
+.person .tougao a:hover{
+    background-position: 0 -42px;
+}
+.person .tougao a span{
+    display: inline-block;
+
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    background: url("../images/Icons2.png")no-repeat 4px -808px;
+}
+.u_nav{
+    margin-top: 10px;
+}
+.u_nav div{
+    float: left;
+    color: #aaa;
+}
+.sapce-bock{
+    text-align: center;
+    width: 58px;
+    height: 35px;
+}
+.space-line{
+    width: 1px;
+    height: 35px;
+    background: #aaaaaa;
+}
+.sapce-bock a{
+
+    color: #aaa;
+}
+.sapce-bock span{
+    display: block;
+    color: #fff;
+}
+.borwseMode-choose{
+    margin-top: 20px;
+    border-top: 1px solid #161616;
+    padding-top: 30px;
+}
+.borwseMode-choose [class*="borwseMode-change"] a{
+    display: block;
+    width: 238px;
+    height: 48px;
+    margin-left: 15px;
+    border-left: 5px solid transparent;
+    border-radius: 3px;
+    text-align: center;
+    line-height: 48px;
+    font-size: 16px;
+    color: #9d9d9d;
+}
+.borwseMode-choose div.borwseMode-change-act a{
+    border-left: 5px solid #66ccff;
+    background: #424242;
+}
+.borwseMode-choose [class*="borwseMode-change"] a:hover{
+    color: #66ccff;
+}
+.borwseMode-choose [class*="borwseMode-change"] a span{
+    display: inline-block;
+    width: 32px;
+    height: 30px;
+    vertical-align: middle;
+    margin-top: -8px;
+    margin-right: 5px;
+    background: url("../images/Icons2.png")no-repeat
+}
+.borwseMode-choose .borwseMode-change-new a span{
+    background-position: -4px -646px;
+}
+.borwseMode-change-recommend{
+    margin-top: 10px;
+}
+.borwseMode-choose .borwseMode-change-recommend a span{
+    background-position: -4px -566px;
+    margin-top: 0px;
+}
+.pubuliu{
+    margin-left: 30px;
+    position: relative;
+    width: 1000px;
+    margin-top: 20px;
+    overflow: hidden;
+}
+.pubuliu .item{
+    width: 228px;
+    position: absolute;
+    overflow: hidden;
+}
+.pubuliu .item img{
+    width: 100%;
+    transition: all 0.2s;
+}
+.pubuliu .item:hover .desc{
+    top:0;
+}
+.pubuliu .item:hover img{
+    width: 105%;
+}
+.pubuliu .item .desc{
+    color: #fff;
+    position: absolute;
+    left: 0;
+    top:100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    transition: all 0.2s;
+}

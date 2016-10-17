@@ -1,0 +1,144 @@
+header{
+    width: 100%;
+    height:41px;
+    border-bottom: 1px solid #717171 ;
+}
+header .logo{
+    margin: 6px 0 0 18px;
+    float: left;
+    width:63px;
+    height: 28px;
+    background: url("../images/logo-mobile.png");
+    background-size: 63px 28px;
+}
+header .search{
+    margin-top: 9px;
+    width: 22px;
+    height: 22px;
+    float: right;
+    background: url("../images/icion-mobile.png")no-repeat 0 -206px;
+    background-size: 274px 228px;
+}
+header .cell{
+    width: 22px;
+    height: 22px;
+    float: right;
+    background: url("../images/icion-mobile.png")no-repeat -22px -206px;
+    background-size: 274px 228px;
+    margin-top: 9px;
+    margin-left: 30px;
+    margin-right: 20px;
+}
+nav{
+    padding: 0 5px;
+    width: 100%;
+    height: 41px;
+    line-height: 41px;
+}
+nav ul{
+    width: 100%;
+}
+nav ul li{
+    width: 20%;
+    font-size: 18px;
+    float: left;
+    text-align: center;
+}
+.user-info{
+    width: 100%;
+    position: relative;
+}
+.user-info>img{
+    width: 100%;
+    display: block;
+}
+.user-info-content{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.user-info-left{
+    position: absolute;
+    left: 4%;
+    bottom: 0;
+    margin-top: 10px;
+    z-index: 1;
+}
+.user-info-left img{
+    width: 80px;
+    height: 80px;
+    border-radius:40px;
+}
+.user-info-left .btn{
+    text-align: center;
+}
+.user-info-left .btn a{
+    border-radius: 3px;
+    border: 2px solid #fff;
+    background: rgba(255,255,255,0.3);
+    width: 4rem;
+    line-height: 2.2rem;
+    font-size: 1rem;
+    color: #fff;
+    display: inline-block;
+    margin: 0.7rem 0 1rem;
+}
+.user-info-right{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+.user-info-right .user-info-name{
+    width: 100%;
+    padding-left: 125px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+}
+.user-info-right .user-info-name .six{
+    background: url("../images/gender-unknown.png")no-repeat;
+    background-size: contain;
+    width: 1rem;
+    height: 1rem;
+    display:inline-block;
+    margin-left: 5px;
+}
+.user-info-meta{
+    width: 100%;
+    padding: 0.6rem 4% 4rem 125px;
+    color: #fff;
+    font-size: 16px;
+    background: rgba(0,0,0,0.3);
+}
+.user-info-meta b{
+    margin-right: 1rem;
+    font-weight: bold;
+}
+/*ÄÚÈÝÏî*/
+.content{
+    margin-top: 20px;
+    width: 100%;
+    background: #F7F7F7;
+    padding: 10px;
+}
+.content .item{
+    border-bottom: 1px solid #66ccff;
+    margin-bottom: 5px;
+}
+.content .item h3{
+    float: left;
+    font-size: 16px;
+}
+.content .item .time{
+    color: #ccc;
+    float: right;
+}
+.content .item p{
+    height: 50px;
+    line-height: 22px;
+    text-indent: 2em;
+    font-size: 14px;
+    overflow: hidden;
+    /*text-overflow: ellipsis;*/
+}
+

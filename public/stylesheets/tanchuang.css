@@ -1,0 +1,47 @@
+.tanchuang{ background:white;
+    border:1px #ccc solid;
+    position:absolute;
+    left:0; top:0;
+    z-index:2;
+    border-radius: 3px;
+}
+.title{
+    height:30px;
+    background:#66ccff;
+    color:white;
+    line-height: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 16px;
+}
+.tanchuang .content{
+    position: relative;
+    min-height: 160px;
+    text-align: center;
+}
+.tanchuang .content p{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    margin-top: -30px;
+    font-size: 14px;
+    color:#000;
+}
+.tanchuang .content button{
+    background: #66ccff;
+    width: 60px;
+    height: 30px;
+    border-radius: 4px;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    margin-left: -30px;
+    bottom: 30px;
+}
+.mark{
+    background:black;
+    opacity:0.5;
+    position:absolute;
+    left:0; top:0;
+    z-index:1;}

@@ -1,0 +1,29 @@
+//
+   Created by pl on 2016/9/23.
+extends layout
+block mlogin
+   header
+      a.logo(href="#")
+      a.logoText 注册
+   div.from
+      form(method="post" action="/regpost")
+         input(type="text" name = "username" placeholder="你的昵称" id="user")
+         p#useryn.yes
+         input(type="password" name="password" id="password" placeholder="您的密码，6-16位字符组成，区分大小写")
+         p#pass.yes
+         select
+            option 中国大陆
+            option 澳门特区
+            option 台湾
+            option 美国
+            option 香港
+            option 比利时
+         input(type="tel" name="phone" placeholder="您的手机")
+         .yanzhen
+            input.numberyz(type="number" name="yanzhengma" placeholder="短信验证码")
+            input.btn(type="button" value="获取短信验证码")
+         div.tongyi 继续注册，表明您已同意
+            a(href="") 《bilibili网会员注册协议》
+         input.login(type="submit" value="同意并注册" id="submit" disabled)
+         a.gologin(href="/ml") 登陆
+   script(src="/javascripts/reg.js")

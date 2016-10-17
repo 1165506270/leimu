@@ -1,0 +1,135 @@
+/*公共样式*/
+html,body,p,h1,h2,h3,ul,li,form,input,img,dd,dl,dt{
+    padding: 0;
+    margin:0;
+    font-size: 12px;
+}
+body{
+    font-size:12px;
+    background: #f5f5f5;
+    font-family:"Microsoft YaHei",Arial,Helvetica,sans-serif;
+    color: #434343;
+}
+input,img{
+    border: 0;
+}
+li,ul,ol{
+    list-style: none;
+}
+h1,h2,h3,b,strong{
+    font-weight: normal;
+    font-size:12px;
+}
+a{
+    color: #434343;
+    text-decoration: none;
+}
+a:hover{
+    color: red;
+}
+.clearfix:after{
+    content: "";
+    height: 0;
+    line-height: 0;
+    display:block;
+    visibility:hidden;
+    clear: both;
+}
+.clearfix{
+    zoom:1;
+}
+.fl{
+    float:left;
+}
+.fr{
+    float:right;
+}
+/*头部开始*/
+.box{
+    width: 1020px;
+    margin: 0 auto;
+}
+.head{
+    height: 42px;
+    /*background:url("../images/16cc4b426b920cc381688e4fc29f2bdacf53fef4.jpg")no-repeat;*/
+    font-size:13px;
+    background-position: center;
+}
+.head_nav{
+    height: 42px;
+    background: rgba(255,255,255,0.4);
+}
+.head_left li,.head_right li{
+    float: left;
+}
+.head_left li a,.head_right li a{
+    display: inline-block;
+    padding: 0 15px;
+    height: 42px;
+    line-height: 42px;
+}
+.head_left li:hover,.head_right li:hover{
+    background: rgba(255,255,255,0.6);
+}
+/*头部结束*/
+/*底部开始*/
+.foot{
+    background: #F6F9FA;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+.foot .foot_top .tips{
+    line-height: 25px;
+    margin-bottom: 10px;
+    color: #AAAAAA;
+    font-size: 14px;
+}
+.foot .foot_top li{
+    position: relative;
+    float: left;
+    width: 296px;
+    padding-right: 10px;
+    line-height: 22px;
+    font-size: 14px;
+    height:100px;
+    margin-bottom: 40px;
+}
+.foot .foot_top li .longs{
+    width: 100px;
+}
+.foot .foot_top li.li2{
+    padding-left: 30px;
+    border-left: 1px solid #E5E9EF;
+}
+.foot .foot_top .cards{
+    float: left;
+    width: 86px;
+    display: inline-block;
+    /*line-height: 22px;*/
+    position: relative;
+}
+.foot_top li a.aimg{
+    float: left;
+    height: 22px;
+}
+.foot_b_l .block{
+    margin-right:10px ;
+}
+.foot_b_l .block p{
+    line-height: 22px;
+    color: #AAAAAA;
+}
+.foot_b_l .block p a{
+    color: #AAAAAA;
+}
+.foot .foot_b_r{
+    width: 310px;
+}
+.foot_b_r .icon{
+    margin:0 20px 0 10px;
+}
+.foot_b_r .icon a{
+    display: inline-block;
+    width: 60px;
+}
+/*底部结束*/

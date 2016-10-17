@@ -1,0 +1,12 @@
+//
+   Created by pl on 2016/9/28.
+extends user
+block content
+   .content
+      each contents,index in content
+         .item
+            a
+               .top.clearfix
+                  h3=contents.title
+                  span.time=contents.time
+               p=contents.content

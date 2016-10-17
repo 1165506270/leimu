@@ -1,0 +1,30 @@
+form{
+    width: 100%;
+    padding: 0 5px;
+}
+.title{
+    width: 100%;
+    padding: 5px;
+    line-height: 30px;
+    height: 30px;
+    border: 1px solid #66ccff;
+    margin-top: 10px;
+}
+form .post_content{
+    margin-top: 10px;
+    width: 100%;
+    height: 200px;
+    padding: 5px;
+    border: 1px solid #66ccff;
+}
+form .submit{
+    width: 50px;
+    background: #66ccff;
+    float: right;
+    margin: 8px 5px 0 0;
+    height: 25px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 3px;
+}

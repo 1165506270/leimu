@@ -1,0 +1,25 @@
+//
+   Created by pl on 2016/9/23.
+extends layout
+block mlogin
+   link(rel="styleSheet" href="/stylesheets/tanchuang.css")
+   header
+      a.logo(href="#")
+      a.logoText 登录
+   div.from
+      form
+         input(type="text" name = "user" placeholder="手机号/注册邮箱")
+         input(type="password" name="password" placeholder="密码")
+         a(href="#") 忘记密码>
+         div.yzmpic
+            input.yanzhengma(type="text" name="yanzhengma" placeholder="验证码")
+            canvas.check
+         input.login(type="button" value="登录" id="sumbit")
+         a.goreg(href="/mr") 注册
+   footer
+      div.sin-login 第三方合作网站登录
+      div.icon
+         a.sinc(href="")
+         a.qq(href="")
+   script(src="/javascripts/tanchuang.js")
+   script(src="/javascripts/login.js")

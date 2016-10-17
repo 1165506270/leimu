@@ -1,0 +1,31 @@
+extends mlayout
+
+block content
+   .head-foot-content
+      .main
+         div.ti-png
+         .title-content
+            form(method="post" action="/regpost")
+               input.user(type="text" name="username" placeholder="昵称（例：哔哩哔哩）")
+               input.password(type="password" name="password" placeholder="密码（6-16个字符组成，区分大小写）")
+               select
+                  option 中国大陆
+                  option 澳门特区
+                  option 台湾
+                  option 美国
+                  option 香港
+               input.tel(type="text" name="phone" placeholder="请输入手机号")
+               p.ma
+                  a.mal(href="#") 用邮箱注册>
+               input.yanzheng(type="number" placeholder="手机验证码" name="yanzhengma")
+               a.huoqu(href="#") 点击获取
+               label.tongyi
+                  input(type="checkbox" name="tongyi")
+                  p 我已同意
+                     a(href="#") 《哔哩哔哩弹幕网用户使用协议》
+                     span 和
+                     a(href="#") 《哔哩哔哩弹幕网账号中心规范》
+               input.tijiao(type="submit" value="注册" disabled)
+               p.denglu
+                  a(href="/ml") 已有账号直接登录
+

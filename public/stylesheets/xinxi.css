@@ -1,0 +1,324 @@
+.person-content{
+    width: 250px;
+    height: 160px;
+    padding: 10px 40px 10px 10px;
+    float: left;
+}
+.person-content a{
+}
+.person-content a img{
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*display: inline-block;*/
+    width: 118px;
+    height: 118px;
+    border-radius: 60px;
+    border: 2px solid #fff;
+}
+.person-r{
+    float: right;
+}
+.person-r p,.person-r div{
+    width: 84px;
+    font-size: 14px;
+}
+.person-r p{
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.person-r div:first-of-type .sendIcon{
+    display: inline-block;
+    width: 21px;
+    height: 13px;
+    vertical-align: middle;
+    margin-top: -3px;
+    background: url("../images/h_img.png")no-repeat 0 -168px;
+}
+.person-r div:last-of-type{
+    width: 82px;
+    height: 32px;
+    text-align: center;
+    background: #00a1d6;
+    border: solid 1px #0082b0;
+    margin-top: 5px;
+    line-height: 31px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.person-r div:last-of-type:hover{
+    background:#66ccff;
+}
+.person-content-text{
+    float: left;
+    width: 450px;
+    padding: 15px 0 0 10px;
+}
+.person-content-text h3{
+    font-size: 18px;
+    font-weight: bold;
+}
+.person-content-info{
+   margin: 10px 0;
+    padding: 5px 15px;
+    height: 20px;
+    background: #fff;
+}
+.person-content-info>div{
+    float: left;
+    margin-left: 20px;
+}
+.person-content-info>div>div{
+    height: 12px ;
+    width: 20px;
+    float: left;
+    margin-top: 3px;
+    background: url("../images/icon_rank.png")no-repeat;
+}
+.person-content-info .click div{
+    background-position:  0px -20px;
+}
+.person-content-info .fav div{
+    background-position: -40px -20px;
+}
+.person-content-info .pinfen div{
+    background-position: -20px -20px;
+}
+.person-content-info .time div{
+    background:url("../images/Icons2.png")no-repeat -2px -325px ;
+    background-size: 80px 780px;
+}
+.person-content-rate{
+    float: right;
+    width: 213px;
+    height: 160px;
+    background: #eeeeee;
+    border: 1px solid #ddd;
+    padding-bottom: 5px;
+    margin-top: 10px;
+}
+
+.bScore{
+    padding: 15px 15px;
+}
+.bScore .rete_avg_num{
+    font-size: 14px;
+    font-weight: bold;
+    float: left;
+}
+.bScore .rete_avg_num_f{
+    float: right;
+    color: #bababa;
+}
+.p-content{
+    border: 1px solid #ddd;
+    background: #fbfbfb;
+}
+.p-img{
+    text-align: center;
+    padding: 10px;
+}
+.p-img a img{
+    max-width: 560px;
+}
+.p-info{
+    height: 52px;
+    background: #fff;
+    border-top: 1px solid #ddd;
+
+}
+.info-l{
+    border-right: 1px solid #ddd;
+    line-height: 43px;
+    padding: 5px 20px;
+    width: 280px;
+}
+.info-l>span:first-of-type{
+    padding-left: 20px;
+    background: url("../images/icons3.png")no-repeat 0 -1347px;
+    float: left;
+}
+.info-l .share-btn{
+    cursor: pointer;
+    transition: all 0.2s;
+    width: 40px;
+    height: 40px;
+    float: left;
+    margin-left: 15px;
+    background: url("../images/sharepic.png")no-repeat;
+}
+.info-l #weibo{
+    background-position: 0 0;
+}
+.info-l #qqweibo{
+    background-position: 0 -140px;
+}
+.info-l #qqzone{
+     background-position: 0 -280px;
+ }
+.info-l #tieba{
+      background-position: 0 -420px;
+}
+.info-l #weibo:hover{
+    background-position: 0 -70px;
+}
+.info-l #qqweibo:hover{
+    background-position: 0 -210px;
+}
+.info-l #qqzone:hover{
+    background-position: 0 -350px;
+}
+.info-l #tieba:hover{
+    background-position: 0 -490px;
+}
+.info-r{
+    line-height: 50px;
+    font-size: 14px;
+    padding-left: 20px;
+}
+.info-r>a:first-of-type>span:first-of-type{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    margin-right: 10px;
+    background: url("../images/xingxing.png")no-repeat;
+}
+.info-r>a:last-of-type>span:first-of-type{
+    margin-left: 20px;
+    margin-right: 10px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    background: url("../images/icon.png")no-repeat;
+}
+.p-review{
+    min-width: 738px;
+    float: left;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+.comm{
+    min-height: 200px;
+    padding-top: 10px;
+}
+.comment-wrap{
+    width: 100%;
+    padding: 0;
+}
+.comment-number{
+    padding: 0;
+}
+.comment-type{
+    height: 57px;
+    width: 100%;
+    border-bottom: 1px solid #e5e9ef;
+}
+.comment-type li{
+    width: 33.3%;
+    line-height: 57px;
+    text-align: center;
+    float: left;
+    cursor: pointer;
+}
+.comment-type li.act{
+    color: #00a1d6;
+}
+.comment-input{
+    margin: 24px 0 30px 0;
+    padding-left: 90px;
+    box-sizing: border-box;
+}
+.comment-input textarea{
+    width: 85%;
+    height: 52px;
+    padding: 5px 10px;
+    border: 1px solid #e5e9ef;
+    border-radius: 3px;
+    resize: none;
+    float: left;
+}
+.comment-input button{
+    width: 64px;
+    height: 64px;
+    font-size: 12px;
+    text-align: center;
+    float: right;
+    padding: 0;
+    border-radius: 4px;
+    background: #00a1a6;
+    color: #fff;
+    border:none;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+.comment-list{
+    width: 100%;
+}
+.comment-list .item{
+    width: 100%;
+    position: relative;
+    padding-left: 83px;
+    box-sizing: border-box;
+}
+.comment-list .item .photo{
+    width: 66px;
+    position: absolute;
+    min-height: 86px;
+    top:0 ;
+    left : 0;
+}
+.comment-list .item .photo a{
+    display: block;
+    width: 50px;
+    height: 50px;
+    padding: 18px 6px;
+}
+.item .photo a img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-sizing: border-box;
+}
+.item .main{
+   width: 100%;
+    padding: 22px 0 14px 0;
+    border-top: 1px solid #e5e9ef;
+    line-height: 2.0rem;
+}
+.item .main a.uname{
+    font-weight: bold;
+    color:#6d757a;
+    padding-bottom: 4px;
+}
+.item .main p.content{
+    width: 652px;
+    padding: 0;
+}
+.item .main .infor{
+    color: #aaa;
+
+}
+.infor p.floor-num{
+    margin-right: 5px;
+    float: left;
+}
+.infor p.time{
+    float: left;
+}
+.hidden{
+    display:none;
+}
+.infor .tools{
+    float: right;
+}
+.infor span.reply{
+    cursor: pointer;
+}
+.infor span.reply:hover{
+    color: #66ccff;
+}

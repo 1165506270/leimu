@@ -1,0 +1,126 @@
+.head-foot-content .main{
+    border-top: 2px solid #f1f1f1;
+    position: relative;
+}
+.head-foot-content .ti-png1{
+    background: url("../images/t2.png");
+    height: 47px;
+    width: 120px;
+    position: absolute;
+    left: 50%;
+    margin-left: -60px;
+    top:-24px;
+}
+.content-db .content-left{
+    margin-top: 50px;
+    width: 490px;
+    height: 260px;
+    position: relative;
+    border-right: 1px solid #dfdfdf;
+}
+.content-left .erweima{
+    width: 175px;
+    height: 200px;
+    position: absolute;
+    background: url("../images/qrcode-app.png")no-repeat 0px 62px;
+    left: 152px;
+    top:0;
+}
+.content-left .erweima img{
+    opacity: 0;
+}
+.content-left .erweima span{
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    background: url("../images/tv.gif");
+}
+.content-left .font{
+    position: absolute;
+    left: 172px;
+    top:200px;
+}
+.content-left img{
+    position: absolute;
+    left: -15px;
+    bottom: -20px;
+}
+.content-right{
+    margin-top: 50px;
+    margin-right: 42px;
+    width: 401px;
+    position: relative;
+}
+.content-right input{
+    width: 388px;
+    height: 18px;
+    padding: 10px 0 10px 10px;
+    font-size: 14px;
+    border-radius: 2px;
+    border: 1px solid #ddd;
+    margin-bottom: 30px;
+}
+.content-right .wangji{
+    position: absolute;
+    right:0;
+    top:115px;
+    color: #00a1d6;
+}
+.content-right label{
+    position: absolute;
+    left: 0;
+    top: 186px;
+    width: 250px;
+    font-size: 13px;
+    color: #717171;
+}
+.content-right .jizhu{
+    width: 13px;
+    height: 13px;
+    margin-bottom: 0px;
+    float: left;
+    margin-right: 4px;
+    margin-top: 3px;
+}
+.content-right .jizhuwo span{
+    font-size: 11px;
+    margin-left: 20px;
+    color: #bbb;
+}
+.content-right #login{
+    width: 184px;
+    background: #00A7DE;
+    border: 1px solid #0381AA;
+    height: 38px;
+    cursor: pointer;
+    color: #fff;
+    margin-bottom: 0;
+}
+.content-right .reg{
+    width: 184px;
+    display: inline-block;
+    border: 1px solid #0381AA;
+    height: 38px;
+    line-height: 38px;
+    border-radius: 2px;
+    text-align: center;
+    vertical-align: middle;
+    position: absolute;
+    right: 0;
+    top:210px;
+}
+.content-right .sin{
+    margin-top: 10px;
+}
+.content-right .sin .sinc,.content-right .sin .qq{
+    display: inline-block;
+    font-size: 12px;
+    padding-left: 25px;
+    line-height: 22px;
+    background: url("../images/snsicon.png") no-repeat 0 0;
+    height: 22px;
+    margin-right: 40px;
+}
+.content-right .sin .qq{
+    background: url("../images/snsicon.png")no-repeat 0 bottom;
+}

@@ -1,0 +1,81 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>登录-哔哩哔哩</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="bilibili是一家弹幕站点,大家可以在这里找到许多的欢乐.">
+  <meta name="keywords" content="B站 弹幕 字幕 AMV MAD MTV ANIME 动漫 动漫音乐 游戏 游戏解说 ACG galgame 动画 番组 新番 初音 洛天依 vocaloid">
+  <link rel="search" type="application/opensearchdescription+xml" href="https://static-s.bilibili.com/opensearch.xml" title="哔哩哔哩" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,minimal-ui" />
+  <script type="text/javascript" src="https://static-s.bilibili.com/js/jquery.min.js"></script>
+  <script type="text/javascript" src="https://static-s.bilibili.com/js/jsencrypt.min.js"></script>
+  <link href="https://static-s.bilibili.com/passport/css/normalize.css" rel="stylesheet">
+  <link href="https://static-s.bilibili.com/passport/css/login-out.css" rel="stylesheet">
+  <style>
+    .input-alert {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+	<header>
+		<a class="logo" href="http://www.bilibili.com"></a>
+		<a class="logoText">登录</a>
+	</header>
+	<div class="form">
+		<form name="userlogin" id="userlogin" action="/login/dologin" method="post" onsubmit="return checkForm(this)">
+			<input type="hidden" name="act" value="login" />
+			<input type="hidden" name="gourl" value="https://passport.bilibili.com/register/phone" />
+			<input type="hidden" name="keeptime" value="604800" />
+			
+			<div class="input-wrp">
+				<input type="text" autocomplete="off" id="userid" name="userid" placeholder="手机号/注册邮箱" />
+			</div>
+			<span class="noticeText" id="userid-err" style="display:none;">要输入注册时的手机号或者邮箱哦</span>
+			<div class="input-wrp">
+				<input type="password" autocomplete="off" id="password" name="pwd" placeholder="密码" />
+			</div>
+			 <p style="padding: 0 10px 0px 0;margin:0;text-align: right">
+                <span class="noticeText" id="password-err" style="display: none;float: left;width: 100px;text-align:left;">密码不能为空</span><a href="https://passport.bilibili.com/resetpwd">忘记密码＞</a>
+            </p>
+			<div class="input-wrp captcha">
+				<input type="text" id="vdcode" autocomplete="off" style="text-transform: uppercase;width: 60%;" name="vdcode" placeholder="验证码" /> <img id="captcha" src="" alt="点击可刷新" onclick="refreshCaptcha()" />
+			</div>
+			<span class="noticeText" id="vdcode-err" style="display:none;">你在右边看到了什么验证码？告诉我吧</span>
+			<div style="margin-top: 55px">
+				<input class="button confirm" type="submit" value="立即登录" />
+			</div>
+			<div>
+				<a class="button" href="/register/phone">注册</a>
+			</div>
+		</form>
+	</div>
+    
+        <div class="sns-login">
+            <div class="splitter">
+                <span class="title">第三方合作网站登录</span>
+            </div>
+            <div class="icon-set">
+                <a href="/login" class="weibo" data-sns="weibo" csrf="77b17d60817b11e6a631522233012624"></a>
+                <a href="/login" class="qq" data-sns="qq" csrf="77b17d60817b11e6a631522233012624"></a>
+            </div>
+        </div>
+    
+	<script type="text/javascript" src="https://static-s.bilibili.com/passport/seajs/sea.js" id="seajsnode"></script>
+	<script type="text/javascript" src="https://static-s.bilibili.com/passport/seajs/sea.config.js"></script>
+	<script type="text/javascript">
+    	seajs.use("login-mobile-index");
+	</script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+extends common
+block xinxi
+   link(rel="styleSheet" href="/stylesheets/xinxi.css")
+   link(rel="styleSheet" href="/stylesheets/tanchuang.css")
+   .box
+      .person.clearfix
+         .person-content
+            a(href="#")
+               img(src="/images/noface.gif")
+            .person-r
+               p
+                  a(href="#")=data.username
+               div
+                  a(href="#")
+                     span.sendIcon
+                     |  私信
+               div +关注
+         .person-content-text
+            h3=data.title
+            div.person-content-info
+               .click
+                  div
+                  | 2916
+               .fav
+                  div
+                  | 0
+               .pinfen
+                  div
+                  | 2338
+               .time
+                  div
+                  | 2016/8/8
+             .shuomin=data.comment
+         .person-content-rate
+            div.bScore
+               div.rete_avg_num 评分
+               div.rete_avg_num_f 9.8/1096
+            .score_wrapper
+         .rate_stat
+      .p-content.box
+         .p-img
+            a(href="#",title="点击查看原图")
+               img(src='tupianku/#{data.url}')
+         .p-info
+            .info-l.fl.clearfix
+               span 分享
+               div.share-list.clearfix
+                  div.share-btn(id="weibo")
+                  div.share-btn(id="qqweibo")
+                  div.share-btn(id="qqzone")
+                  div.share-btn(id="tieba")
+            .info-r.fl
+               a(href="#")
+                  span
+                  span 收藏
+               a.broken(href="#")
+                  span
+                  span platzen
+      .p-review
+         .comm
+            //.biliComment.comment-wrap
+            //   .comment-number 共
+            //      span 13
+            //      | 条评论
+            //   ul.comment-type
+            //      li.act 默认排序
+            //      li 按赞同数
+            //      li 按回复数
+            //   .comment-input.clearfix
+            //      div
+            //         textarea.cont-comment(placeholder="请输入3-1000个字的评论内容")
+            //         button(type="button" class="btn-comment") 发表评论
+            //   .comment-list
+            //      -for(var i=0;i<5;i++){
+            //         .item
+            //            .photo
+            //               a(href="#")
+            //                  img(src="/images/noface.gif")
+            //            .main
+            //               a.uname(href="#") 弹簧字
+            //               p.content 好喜欢这种画风
+            //               .infor.clearfix
+            //                  p.floor-num.fl #13
+            //                  p.time.fl 2016-08-06
+            //                  p.tools.fr
+            //                     span.reply 回复
+            //      -}
+   script(src="/javascripts/tanchuang.js")
+   script(src="/javascripts/xinxi.js")
+   script(src="/javascripts/comment.js")
+
+
+
+
+
+                     
