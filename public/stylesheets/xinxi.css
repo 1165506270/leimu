@@ -78,7 +78,7 @@
     background: url("../images/icon_rank.png")no-repeat;
 }
 .person-content-info .click div{
-    background-position:  0px -20px;
+    background-position: 0 -20px;
 }
 .person-content-info .fav div{
     background-position: -40px -20px;
@@ -108,9 +108,82 @@
     font-weight: bold;
     float: left;
 }
+
+.bScore .score_wrapper {
+    width: 100%;
+    height: 20px;
+}
+
+.bScore .score_wrapper a.score_icon {
+    float: left;
+    width: 35px;
+    height: 25px;
+    margin-left: 1px;
+    background: url("../images/h_img.png") no-repeat 0 -48px;
+    margin-top: 5px;
+}
+
+.bScore .score_wrapper a.on {
+    background-position: -109px -48px;
+}
 .bScore .rete_avg_num_f{
     float: right;
     color: #bababa;
+}
+
+.m_layer {
+    position: absolute;
+    width: 213px;
+    height: 56px;
+    border: 1px solid #ddd;
+    background: #fff;
+rgba(0, 0, 0, 0.16) 0 2 px 4 px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    display: none;
+}
+
+.m_layer div:first-of-type {
+    width: 100%;
+    text-align: center;
+}
+
+.m_layer .btnBox {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.m_layer .btnBox a {
+    width: 40px;
+    height: 20px;
+    line-height: 20px;
+    display: inline-block;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.m_layer .btnBox .m_yes {
+    background: #66ccff;
+    color: #fff;
+    margin-right: 20px;
+}
+
+.m_layer .btnBox .m_no {
+    background: #fff;
+    color: #000;
+}
+
+.m_success {
+    position: absolute;
+    background: #fff;
+    width: 70px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+rgba(0, 0, 0, 0.16) 0 2 px 4 px;
+    text-align: center;
+    display: none;
 }
 .p-content{
     border: 1px solid #ddd;

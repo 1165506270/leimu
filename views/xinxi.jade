@@ -33,9 +33,14 @@ block xinxi
              .shuomin=data.comment
          .person-content-rate
             div.bScore
-               div.rete_avg_num 评分
-               div.rete_avg_num_f 9.8/1096
-            .score_wrapper
+               div.clearfix
+                  div.rete_avg_num 评分
+                  div.rete_avg_num_f 9.8/1096
+               div.score_wrapper.clearfix
+                  -for(var i=0;i<5;i++){
+                  a.score_icon(href="javascript://" data-score="#{i + 1}")
+                  -}
+               .rate_stat
          .rate_stat
       .p-content.box
          .p-img
