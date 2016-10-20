@@ -1,1 +1,35 @@
-<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,minimal-ui"><title></title><link rel="stylesheet" href="/stylesheets/m.login.css"><link rel="stylesheet" href="/stylesheets/m.reg.css"><script src="/javascripts/zepto.min.js"></script><script src="/javascripts/touch.js"></script></head><body></body><header><a href="#" class="logo"></a><a class="logoText">注册</a></header><div class="from"><form method="post" action="/regpost"><input type="text" name="username" placeholder="你的昵称" id="user"><p id="useryn" class="yes"></p><input type="password" name="password" id="password" placeholder="您的密码，6-16位字符组成，区分大小写"><p id="pass" class="yes"></p><select><option>中国大陆</option><option>澳门特区</option><option>台湾</option><option>美国</option><option>香港</option><option>比利时</option></select><input type="tel" name="phone" placeholder="您的手机"><div class="yanzhen"><input type="number" name="yanzhengma" placeholder="短信验证码" class="numberyz"><input type="button" value="获取短信验证码" class="btn"></div><div class="tongyi">继续注册，表明您已同意<a href="">《bilibili网会员注册协议》</a></div><input type="submit" value="同意并注册" id="submit" disabled class="login"><a href="/ml" class="gologin">登陆</a></form></div><script src="/javascripts/reg.js"></script></html>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,minimal-ui">
+    <title></title>
+    <link rel="stylesheet" href="/stylesheets/m.login.css">
+    <link rel="stylesheet" href="/stylesheets/m.reg.css">
+    <script src="/javascripts/zepto.min.js"></script>
+    <script src="/javascripts/touch.js"></script>
+</head>
+<body></body>
+<header><a href="javascript://" class="logo"></a><a class="logoText">注册</a></header>
+<div class="from">
+    <form method="post" action="/regpost"><input type="text" name="username" placeholder="你的昵称" id="user">
+
+        <p id="useryn" class="yes"></p><input type="password" name="password" id="password"
+                                              placeholder="您的密码，6-16位字符组成，区分大小写">
+
+        <p id="pass" class="yes"></p><select>
+            <option>中国大陆</option>
+            <option>澳门特区</option>
+            <option>台湾</option>
+            <option>美国</option>
+            <option>香港</option>
+            <option>比利时</option>
+        </select><input type="tel" name="phone" placeholder="您的手机">
+
+        <div class="yanzhen"><input type="number" name="yanzhengma" placeholder="短信验证码" class="numberyz"><input
+                type="button" value="获取短信验证码" class="btn"></div>
+        <div class="tongyi">继续注册，表明您已同意<a href="">《bilibili网会员注册协议》</a></div>
+        <input type="submit" value="同意并注册" id="submit" disabled class="login"><a href="/ml" class="gologin">登陆</a>
+    </form>
+</div>
+<script src="/javascripts/reg.js"></script>
+</html>
