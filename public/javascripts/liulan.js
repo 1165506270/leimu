@@ -26,7 +26,6 @@ $(function(){
             url:"/huoqu",
             data:{"page":page},
             beforeSend:function(){
-                console.log(flag1)
                 if(flag){//当flag为true时不再发送ajax请求
                     return false;
                 };
@@ -50,7 +49,6 @@ $(function(){
                     }).appendTo(".pubuliu");//生成元素，插入父元素最后面
                 }
                 $('.item img').load(function(){
-                    console.log(111);
                     $(this).css({
                         transition: "all 0.5s",
                         transform:"scale(1.2)"

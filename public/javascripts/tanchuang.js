@@ -29,7 +29,6 @@ Tanchuang.prototype.init = function(opt) {
         height: opt.h
     }).appendTo("body");
     if (opt.dir == "center") {
-        console.log($(window).scrollTop())
         $(".tanchuang")[0].style.left = (document.documentElement.clientWidth - opt.w) / 2 + "px";
         $(".tanchuang")[0].style.top = (document.documentElement.clientHeight - opt.h) / 2 + $(window).scrollTop() + "px";
         if (opt.mark) {
@@ -49,7 +48,6 @@ Tanchuang.prototype.init = function(opt) {
     }
     Tanchuang.prototype.guanbi = function () {
         $("#guanbi").click(function () {
-            console.log($(".tanchuang"))
             $(".tanchuang").detach();
         })
     }

@@ -137,8 +137,8 @@
     height: 56px;
     border: 1px solid #ddd;
     background: #fff;
-rgba(0, 0, 0, 0.16) 0 2 px 4 px;
     padding: 10px 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0 2px 4px;
     border-radius: 4px;
     display: none;
 }
@@ -181,7 +181,7 @@ rgba(0, 0, 0, 0.16) 0 2 px 4 px;
     line-height: 30px;
     border: 1px solid #ddd;
     border-radius: 4px;
-rgba(0, 0, 0, 0.16) 0 2 px 4 px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0 2px 4px;
     text-align: center;
     display: none;
 }

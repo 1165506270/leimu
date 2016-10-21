@@ -10,48 +10,70 @@ $(function(){
         platform:'mobile',
         pageSize:20
     });
-    var data = [
-        {title: "1", num: 6},
-        {title: '2', num: 20},
-        {title: "3", num: 7},
-        {title: "4", num: 60},
-        {title: "5", num: 9}
-    ];
-    //关于评分的条形图绘制
-    var pingfen = new T();
-    var ele = $(".rate_stat")[0];
-    pingfen.init({
-        width: 183,
-        height: 100,
-        padding: 15,
-        color: "#de698c",
-        data: data,
-        ele: ele,
-        font: "12px 宋体"
-    });
+    init();
     //发送ajax请求获取当前用户是否对当前图片进行过评分
-    $.ajax({
-        type: "get",
-        url: "searchScore",
-        data: {aid: window.location.pathname.slice(3)},//向服务器传递当前图片的aid
-        success: function (data) {
-            if (data.score[0]) {//当有评分时将页面的分数设置为获得的分数
-                $(".score_icon").addClass("on").eq(data.score[0].score - 1).nextAll("a").removeClass("on");
-            } else {
-               //当没有评分时，就添加一些交互的事件，
-                $(".score_icon").on("mouseenter", function () {
-                    $(".score_icon").addClass("on");
-                    $(this).nextAll("a").removeClass("on");
-                });
-                $(".score_icon").eq(0).on("mouseleave", function () {
-                    $(this).removeClass("on");
-                });
-                $(".score_icon").on("click", function (e) {
-                    layer(e.pageX, e.pageY, $(this).data("score"))
+    function init() {
+        $.ajax({
+            type: "get",
+            url: "searchScore",
+            data: {aid: window.location.pathname.slice(3)},//向服务器传递当前图片的aid
+            success: function (data) {
+                if (data.flag == 1 && data.score[0]) {//当有评分时将页面的分数设置为获得的分数
+                    $(".score_icon").addClass("on").eq(data.score[0].score - 1).nextAll("a").removeClass("on");
+                } else if (data.flag == 1) {
+                    //当没有评分时，就添加一些交互的事件，
+                    $(".score_icon").on("mouseenter", function () {
+                        $(".score_icon").addClass("on");
+                        $(this).nextAll("a").removeClass("on");
+                    });
+                    $(".score_icon").eq(0).on("mouseleave", function () {
+                        $(this).removeClass("on");
+                    });
+                    $(".score_icon").on("click", function (e) {
+                        layer(e.pageX, e.pageY, $(this).data("score"))
+                    })
+                } else {
+                    $(".score_icon").on("click", function () {
+                        new Tanchuang().init({
+                            title: "错误",
+                            w: 300,
+                            h: 200,
+                            dir: "center",
+                            content: "请登录后再进行评分",
+                            mark: false
+                        })
+                    })
+                }
+                //根据数据绘制条形图
+                var arr = [
+                    {title: "1", num: 0},
+                    {title: '2', num: 0},
+                    {title: "3", num: 0},
+                    {title: "4", num: 0},
+                    {title: "5", num: 0}
+                ];
+                $.each(data.scoreArr, function (i, v) {
+                    for (var i = 0; i < arr.length; i++) {
+                        if (arr[i]["title"] == v.score) {
+                            arr[i]["num"] += 1;
+                        }
+                    }
                 })
+                //关于评分的条形图绘制
+                var pingfen = new T();
+                var ele = $(".rate_stat")[0];
+                pingfen.init({
+                    width: 183,
+                    height: 100,
+                    padding: 15,
+                    color: "#de698c",
+                    data: arr,
+                    ele: ele,
+                    font: "12px 宋体"
+                });
             }
-        }
-    })
+        })
+    }
     //点击评分后的弹窗
     function layer(x, y, score) {
         //把原来的弹窗清除，避免出现多个弹窗
@@ -98,7 +120,7 @@ $(function(){
                     });
                     //清除.score_icon上的事件，并将分数锁定
                     $(".score_icon").unbind().addClass("on").eq(score - 1).nextAll("a").removeClass("on");
-
+                    init();
                 }
             })
         });
