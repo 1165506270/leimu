@@ -35,7 +35,8 @@
         pn,//页码
         userFace,//用户头像路径
         platform,//设备类型
-        login//登录状态
+        login,//登录状态
+        aid;//当前图片编码
     //查询设备类型的对象
     window.browser = {
         version: (function() {
@@ -68,13 +69,13 @@
         type = option.type;
         platform = option.platform || platform;
         ele = option.ele;
+        aid = option.aid;
         pageSize = option.pageSize || pageSize;
         userFace = option.userFace || "/images/noface.gif";
         //只有页面内没有评论区域才会执行下面的函数
         if ($('div.' + BLIICOMMENT + "").size() <= 0) {
             setOuterFrame(ele);
         }
-
     }
         //构建一个外框（把评论区不会变动的区域搭建出来）
         function setOuterFrame(ele) {
@@ -107,7 +108,6 @@
                 ].join('');
                 login = 0;
             }
-
             outFrame.push([
                 tempDom + '<div class="comment-list">',
                 '</div>',
@@ -119,13 +119,13 @@
                 $('.comment-wrap', $(ele)).addClass('mobile');
             }
             //获取评论列表
-            getCommentList(0);
+            getCommentList(1,1);
             //绑定筛选事件
 
             //发表评论
             publishComment();
             //绑定换页事件
-
+            flip();
             //绑定登录事件
 
 
@@ -141,14 +141,15 @@
                 pn:pn||1,
                 ps:pageSize,
                 sort:sort||0,
+                aid:aid
             },
             success:function(data){
-                console.log(data)
+                login = data.uid;
                 var code = data.code;
                 //总评论数
                 $('span.number').html(data.length||0);
                 //评论列表
-                $('div.comment-list').html(setCommentList(data));
+                $('div.comment-list').html(setCommentList(data.data));
                 //当评论数大于设置的显示条数时创建页码
                 if(data.length>pageSize){
                     $('div.comment-flip').length
@@ -170,24 +171,24 @@
             item,
             member,
             content,
-            childReply;
+            childReply;//子评论
         //循环遍历传入的json,生成相应的评论
         for (var i = 0; i < json.length;i++) {
-            item = json[i] || {};
-            member = item.uname || {};
-            content = item.content || {};
+            item = json[i] || {};//评论的每一项
+            member = item.uname || {};//评论作者的id
+            content = item.content || {};//评论的内容部分
             plat = content.plat || 0;
             childReply = item.replies || []
 
             commentListDom.push([
                 '<div class="item ' + (isChild ? "child-item" : "") + '">',
                 '<div class="photo">',
-                '<a href="' + (item.mid || empty) + '" target="_blank" data-mid="' + (item.mid || empty) + '" data-card="' + (member.uname || empty) + '">',
+                '<a href="' + (item.uid || empty) + '" target="_blank" data-mid="' + (item.uid || empty) + '" data-card="' + (member.uname || empty) + '">',
                 '<img src="/images/noface.gif" class="face">',
                 '</a>',
                 '</div>',
                 '<div class="main">',
-                '<a href="' + (item.mid || empty) + '" target="_blank" class="uname">' + item.uname + '</a>',
+                '<a href="' + (item.uid || empty) + '" target="_blank" class="uname">' + item.uname + '</a>',
                 '<p class="content">' + content + '</p>',
                 '<div class="infor clearfix">' + (isChild ? "" : "<p class=\"floor-num\">#" + (item.floor || 0) + "</p>") + "<p class=\"time\">" + human_date(item.time) + "</p>",
                 '<p class="tools" data-rpid="' + (item.rpid || empty) + '">',
@@ -201,22 +202,26 @@
     }
     //构建页码控制组件
     function setFlipControl(pn,total){//pn为当前页数，total为总页数
+        //当页数大于1时执行下面的程序
         if(total>1){
             var c = ['<div class=\'comment-flip\'>'];
-            if(total>5){
+            if(total>5){//页数大于五时
                 if(pn<=4){
-                    for(var i =1;i <=5&&i<=(pn+2);i++){
+                    //当前页码小于或等与4时
+                    for(var i =1;i <=5&&i<=(parseInt(pn)+2);i++){
                         c.push('<a href\'javascript:void(0)\' class="' +(pn==i?'on':'')+'" >'+i+'</a>');
                     }
                     c.push('<span>......</span><a href\'javascript:void(0)\'>'+ total +'</a>')
                 }else if(pn>total-3){
+                    //当前页码大于倒数第三页页码时
                     c.push('<a href\'javascript:void(0)\'>1</a><span>......</span>');
                     for(var i = pn-2;i<=total;i++){
                         c.push('<a href\'javascript:void(0)\' class="' +(pn==i?'on':'')+'" >'+i+'</a>');
                     }
                 }else{
+                    //以上条件都不满足时
                     c.push('<a href\'javascript:void(0)\'>1</a><span>......</span>');
-                    for(var i = pn-2;i<=(pn+2);i++){
+                    for(var i = pn-2;i<=(2+parseInt(pn));i++){
                         c.push('<a href\'javascript:void(0)\' class="' +(pn==i?'on':'')+'" >'+i+'</a>');
                     }
                     c.push('<span>......</span><a href\'javascript:void(0)\'>'+total+'</a>');
@@ -233,26 +238,27 @@
     }
     //挂在翻页事件
     function flip(){
-        $(document).on('click','.comment-wrap .comment-flip a',function(e){
+        $(document).on('click','.comment-flip a',function(e){
             var $a = $(e.currentTarget);
             getCommentList(sort,$a.text());
             pn = $a.text();
+            $(window).scrollTop($(".comm").offset().top);
         })
-        $(document).on('keydown','.comment-wrap .assign-page-number input.page-number',function(e){
+        $(document).on('keydown',".comment-flip .assign-page-number input",function(e){
             if(e.keyCode == '13'){
-                 var $a = $(e.currentTarget);
+                var $a = $(e.currentTarget);
                 var max = $a.attr('total');
                 pn = $a.val();
                 pn = pn<1?1:pn;
                 pn = pn>max?max:pn;
                 getCommentList(sort,pn);
+                $(window).scrollTop($(".comm").offset().top);
             }
         });
     }
     global.comment = init
     //发表评论
     function publishComment(){
-        console.log("551");
         //$(document).on('click','comment-wrap .comment-input .btn-comment',function(e){
         //
             $('.btn-comment').click(function(e){
@@ -285,11 +291,11 @@
                 type : type,
                 message : $val || '',
                 plat : 1,
+                aid:aid,
                 time:new Date().getTime()/1000,
                 //code : $captcha,
                 //r : Math.random()
             };
-                console.log(option);
             $btn.addClass("lock");
             $.ajax({
                 url: urlConfig.baseUrl + urlConfig.specificUrl.sendReply,
@@ -304,6 +310,14 @@
                     //把这个评论加到页面上
                     if(true){
                         //sendMsg('发送成功');
+                        new Tanchuang().init({
+                            title:"成功",
+                            w:300,
+                            h:200,
+                            dir:"center",
+                            content:"发送成功",
+                            mark:false
+                        })
                         $btn.prevAll('.cont-comment').val('');
                         getCommentList(sort,pn);
                         $('.captcha-holder').remove();
@@ -344,5 +358,4 @@
             return n_d.getFullYear() + "-" + m + "-" + d + " " + H + ":" + M;
         }
     }
-
 })(window)

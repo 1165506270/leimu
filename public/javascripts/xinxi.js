@@ -8,7 +8,7 @@ $(function(){
         aid: window.location.pathname.slice(3),
         type:3,
         platform:'mobile',
-        pageSize:20
+        pageSize:5
     });
     init();
     //发送ajax请求获取当前用户是否对当前图片进行过评分
@@ -52,13 +52,20 @@ $(function(){
                     {title: "4", num: 0},
                     {title: "5", num: 0}
                 ];
+                var pinfen = 0;//总分数
                 $.each(data.scoreArr, function (i, v) {
+                    pinfen+= v.score;
                     for (var i = 0; i < arr.length; i++) {
                         if (arr[i]["title"] == v.score) {
                             arr[i]["num"] += 1;
                         }
                     }
                 })
+                $(".person-content-info .pinfen").text(pinfen);//更新总分数
+                //计算得分占比
+                var str = ""+(($(".person-content-info .pinfen").text()/(data.scoreArr.length*5))*10);
+                //更新的分占比
+                $(".rete_avg_num_f").text((isNaN(str.slice(0,3))?"0":str.slice(0,3))+"/10")
                 //关于评分的条形图绘制
                 var pingfen = new T();
                 var ele = $(".rate_stat")[0];

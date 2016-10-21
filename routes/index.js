@@ -30,7 +30,7 @@ connection.connect(function(err){
 //浏览模式
 router.get('/liulan',function(req,res){
   res.render("liulan",{});
-})
+});
 router.get('/huoqu',function(req,res){
   connection.query("SELECT  url,title,uid FROM tupianku", function (err, rows) {
     if (err) {
@@ -39,7 +39,7 @@ router.get('/huoqu',function(req,res){
         res.json(rows.reverse().slice(req.query.page*8,req.query.page*8+8));//返回作品页面，传入最新的10张作品信息
     }
   })
-})
+});
 //首页
 //router.get('/', function(req, res, next) {
 //  res.render('zuopin');
@@ -66,7 +66,7 @@ router.get('/index',function(req,res){
         }
       }
     })
-})
+});
 //电脑端登录页面
 router.get("log",function(req,res){
   render("login",{title:"登录"})
@@ -156,7 +156,7 @@ router.get("/tougao",function(req,res){
 //投稿功能
 router.post("/tougao",multipartMiddleware,function(req,res) {
   console.log(req.files)
-  var des_file = "/画友/public/tupianku/" + req.files.img.originalFilename;//图片文件的保存路径及图片名字
+  var des_file = "/leimu/public/tupianku/" + req.files.img.originalFilename;//图片文件的保存路径及图片名字
 
   fs.readFile(req.files.img.path, function (err, data) {//使用fs模块readFile打开图片文件
     fs.writeFile(des_file, data, function (err) {//用fs.writeFile将图片内容写入指定的路径中
@@ -169,7 +169,7 @@ router.post("/tougao",multipartMiddleware,function(req,res) {
   })
   //将作品的标题，说明，投稿时间，用户名信息保存进数据库
   var date = new Date();//投稿的时间
-  var time = date.getFullYear() + "-" + date.getMonth() + 1 + "-" + date.getDate() + "&nbsp" + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+  var time = date.getFullYear() + "-" + date.getMonth() + 1 + "-" + date.getDate() + "   " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
   connection.query('INSERT INTO tupianku (url,title,time,comment,username) VALUES ("' + req.files.img.originalFilename + '","' + req.body.title + '","' + time + '","' + req.body.comment + '","' + req.session.name + '")', function (err, rows) {
     if (err) {
       console.log("出错了" + err);
@@ -186,27 +186,88 @@ router.get("/by*",function(req,res){
     if(err){
       console.log(err);
     }else{
-      res.render("xinxi",{"data":rows[0]})
+      connection.query("SELECT score FROM score WHERE aid="+url,function(err,rows1){
+        if(err){
+          console.log(err);
+        }else{
+          var score = 0;
+          for(var i = 0 ; i<rows1.length ; i++){
+            score += rows1[i].score;
+          }
+          res.render("xinxi",{"data":rows[0],"score":score});
+        }
+
+      })
+
     }
   })
 })
 router.get("/comment",function(req,res){
-  connection.query("SELECT * FROM comment",function(err,rows){
+  connection.query("SELECT * FROM comment WHERE aid = "+req.query.aid,function(err,rows){
     if(err){
       console.log(err);
     }else{
-      res.json(rows);
+      res.json({
+        data:rows.reverse().slice(req.query.ps*(req.query.pn-1),req.query.ps*req.query.pn),
+        length:rows.length,
+        uid:req.session.name?req.session.name:false
+      });
     }
   })
 })
+//提交评论
 router.post("/comment/add",function(req,res){
-  console.log(req.body.message);
-  connection.query('INSERT INTO comment (content,uname,time) VALUES ("'+req.body.message+'","'+req.session.name+'","'+req.body.time+'")',function(err,rows){
-      if(err){
-        console.log(err);
+  var floor;
+  //先获取当前最高评论的楼层，之后+1存储为新评论的楼层数
+  connection.query("SELECT COUNT(*) FROM comment WHERE aid = "+req.body.aid,function(err,rows){
+    if(err){
+      console.log(err);
+    }else{
+      floor = rows[0]["COUNT(*)"]+1;//楼层数
+      connection.query('INSERT INTO comment (content,uname,time,aid,floor) VALUES ("'+req.body.message+'","'+req.session.name+'","'+req.body.time+'","'+req.body.aid+'","'+floor+'")',function(err,rows){
+        if(err){
+          console.log(err);
+        }else{
+          res.json({})
+        }
+      })
+    }
+  })
+})
+//提交评分
+router.post("/postScore",function(req,res){
+  connection.query("INSERT INTO score (aid,score,uid) VALUES ('"+req.body.aid+"','"+req.body.score+"','"+req.session.name+"')",function(err,rows){
+    if(err){
+      console.log(req.body.score,req.body.aid)
+      console.log(err);
+    }else{
+      res.json({})
+    }
+  })
+})
+//查询用户是否对此图片进行过评分，如果有就把分数传过去
+router.get("/searchScore",function(req,res){
+  var data = {};
+  connection.query("SELECT score FROM score WHERE aid = "+req.query.aid,function(err,rows){
+    if(err){
+      console.log(err);
+    }else{
+      data.scoreArr = rows;
+      if(req.session.name) {
+        connection.query("SELECT score FROM score WHERE uid='"+ req.session.name + "' AND aid=" + req.query.aid, function (err, rows) {
+          if (err) {
+            console.log(err);
+          } else {
+            data.flag = 1;
+            data.score = rows;
+            res.json(data);
+          }
+        })
       }else{
-        res.json({});
+          data.falg = 0;
+        res.json(data);
       }
+    }
   })
 })
 module.exports = router;

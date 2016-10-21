@@ -395,3 +395,35 @@
 .infor span.reply:hover{
     color: #66ccff;
 }
+.comment-flip{
+    width: 100%;
+    text-align: center;
+}
+.comment-flip>a{
+    display: inline-block;
+    width: 25px;
+    height: 22px;
+    border: 1px solid #66ccff;
+    border-radius: 6px;
+    line-height: 22px;
+    text-align: center;
+    cursor: pointer;
+    color: #1a1a1a;
+}
+.comment-flip>a.on{
+    border: 1px solid #00a1d6;
+    box-shadow: #00a1d6 0px 0px 2px 0px inset;
+}
+.comment-flip .assign-page-number{
+    margin-left: 30px;
+    display: inline-block;
+}
+.comment-flip .assign-page-number input{
+    width: 30px;
+    height: 22px;
+    line-height: 22px;
+    border: 1px solid #00a1d6;
+    border-radius: 3px;
+    margin: 0 5px;
+    text-align: center;
+}

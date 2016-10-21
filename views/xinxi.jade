@@ -26,7 +26,7 @@ block xinxi
                   | 0
                .pinfen
                   div
-                  | 2338
+                  =score
                .time
                   div
                   #{data.time}
@@ -35,7 +35,7 @@ block xinxi
             div.bScore
                div.clearfix
                   div.rete_avg_num 评分
-                  div.rete_avg_num_f 9.8/1096
+                  div.rete_avg_num_f 10/10
                div.score_wrapper.clearfix
                   -for(var i=0;i<5;i++){
                   a.score_icon(href="javascript://" data-score="#{i + 1}")
