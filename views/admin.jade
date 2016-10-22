@@ -1,0 +1,18 @@
+//
+   Created by pl on 2016/10/22.
+extends common
+block admin
+   link(rel="stylesheet" href="/stylesheets/admin.css")
+   div.body.clearfix
+      div.admin_left
+      div.admin_content
+         -for(var i = 0 ; i<data.length ;i++){
+            div.item
+               div
+                     img(src="/tupianku/#{data[i].url}" data-uid="#{data[i].uid}")
+               p=data[i].title
+               div.operate
+                  button.agree 通过
+                  button.refuse 拒绝
+         -}
+   script(src="/javascripts/admin.js" type="text/javascript")

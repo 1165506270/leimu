@@ -1,0 +1,60 @@
+.body{
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 980px;
+    border: 1px solid #cccccc;
+}
+.admin_left{
+    float: left;
+    width: 179px;
+    border-right: 1px solid #66ccff;
+    height: 600px;
+}
+.admin_content{
+    float: left;
+    width: 800px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.admin_content .item{
+    width: 170px;
+    height: 220px;
+    float: left;
+    margin-right: 12px;
+    text-align: center;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 25px;
+    transition: all .2s;
+}
+/*.admin_content .item:hover{*/
+    /*box-shadow: 0 0 5px 5px #eee;*/
+    /*background: #ddd;*/
+/*}*/
+.admin_content .item div{
+    width: 100%;
+    height: 170px;
+}
+.admin_content .item div img {
+    height: 170px;
+}
+.admin_content .item p{
+    /*line-height: 34px;*/
+    font-size: 13px;
+}
+.admin_content .item button{
+    width: 60px;
+    height: 25px;
+    border-radius: 3px;
+    border:1px solid #66ccff;
+    cursor: pointer;
+}
+.admin_content .item button.agree{
+    margin-right: 3px;
+}
+.admin_content .item button:hover{
+    background: #00a1d6;
+    color: #fff;
+}
+
+

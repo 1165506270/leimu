@@ -60,12 +60,12 @@ $(function(){
                             arr[i]["num"] += 1;
                         }
                     }
-                })
-                $(".person-content-info .pinfen").text(pinfen);//更新总分数
+                });
+                $(".person-content-info .pinfen span").text(pinfen);//更新总分数
                 //计算得分占比
-                var str = ""+(($(".person-content-info .pinfen").text()/(data.scoreArr.length*5))*10);
+                var str = ""+(($(".person-content-info .pinfen span").text()/(data.scoreArr.length*5))*10);
                 //更新的分占比
-                $(".rete_avg_num_f").text((isNaN(str.slice(0,3))?"0":str.slice(0,3))+"/10")
+                $(".rete_avg_num_f").text((isNaN(str.slice(0,3))?"0":str.slice(0,3))+"/"+pinfen);
                 //关于评分的条形图绘制
                 var pingfen = new T();
                 var ele = $(".rate_stat")[0];
@@ -101,35 +101,35 @@ $(function(){
             var data = {
                 score: score,//选择的分数
                 aid: window.location.pathname.slice(3)//当前图片的aid
-            }
+            };
             $(".m_layer").remove();//把弹窗清除
             //发送ajax请求
-            $.ajax({
-                type: "post",
-                url: "/postScore",
-                data: data,
-                beforSend: function () {
+                $.ajax({
+                    type: "post",
+                    url: "/postScore",
+                    data: data,
+                    beforSend: function () {
 
-                },
-                success: function () {
-                    //评分成功后弹出评分成功的窗体
-                    $("<div>", {
-                        html: '评分成功',
-                        class: "m_success",
-                        style: "left:" + (x - 35) + "px;top:" + (y - 40) + "px"
-                    }).appendTo("body").fadeIn(300, function () {
-                        //两秒钟后隐藏窗体并清除
-                        setTimeout(function () {
-                            $('.m_success').fadeOut(300,function(){
-                                $('.m_success').remove();
-                            })
-                        }, 2000);
-                    });
-                    //清除.score_icon上的事件，并将分数锁定
-                    $(".score_icon").unbind().addClass("on").eq(score - 1).nextAll("a").removeClass("on");
-                    init();
-                }
-            })
+                    },
+                    success: function () {
+                        //评分成功后弹出评分成功的窗体
+                        $("<div>", {
+                            html: '评分成功',
+                            class: "m_success",
+                            style: "left:" + (x - 35) + "px;top:" + (y - 40) + "px"
+                        }).appendTo("body").fadeIn(300, function () {
+                            //两秒钟后隐藏窗体并清除
+                            setTimeout(function () {
+                                $('.m_success').fadeOut(300,function(){
+                                    $('.m_success').remove();
+                                })
+                            }, 2000);
+                        });
+                        //清除.score_icon上的事件，并将分数锁定
+                        $(".score_icon").unbind().addClass("on").eq(score - 1).nextAll("a").removeClass("on");
+                        init();
+                    }
+                })
         });
         //取消的点击事件
         $(".m_no").click(function () {

@@ -20,16 +20,16 @@ block xinxi
             div.person-content-info
                .click
                   div
-                  | 2916
+                  span=data.see
                .fav
                   div
                   | 0
                .pinfen
                   div
-                  =score
+                  span=score
                .time
                   div
-                  #{data.time}
+                  span=data.time
              .shuomin=data.comment
          .person-content-rate
             div.bScore
@@ -38,7 +38,7 @@ block xinxi
                   div.rete_avg_num_f 10/10
                div.score_wrapper.clearfix
                   -for(var i=0;i<5;i++){
-                  a.score_icon(href="javascript://" data-score="#{i + 1}")
+                     a.score_icon(href="javascript://" data-score="#{i + 1}")
                   -}
                .rate_stat
          .rate_stat
