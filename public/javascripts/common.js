@@ -2,9 +2,22 @@
  * Created by pl on 2016/10/23.
  */
 $(function(){
-    $("#logout").click(function(){
-        delCookie("uid");
-    })
+
+    $.ajax({
+        type:"get",
+        url:"/face",
+        data:{uid:getCookie("uid")||null},
+        success:function(data){
+            $("#face")[0].src =data.src?"/face/"+data.src:"/images/noface.gif";
+        }
+    });
+    if(!getCookie("uid")){
+        $("#log").html("<a href='/ml' id='login'>登录</a>")
+    }else{
+        $("#logout").click(function(){
+            delCookie("uid");
+        })
+    }
 });
 function delCookie(name) {
     var exp = new Date();

@@ -13,7 +13,7 @@ block banner
                -for(var j = 0;j<6&&i+j<data.length;j++){
                   div
                      a(href="by#{data[i+j].uid}")
-                        img(src="/tupianku/#{data[i+j].url}")
+                        img(src="/tupianku/small/#{data[i+j].url}")
                -}
          -}
    script(src="/javascripts/banner.js")
@@ -30,7 +30,7 @@ block zuopin
                   .news-item
                      a(href="by#{item.uid}")
                         div
-                           img(src="/tupianku/#{item.url}")
+                           img(src="/tupianku/small/#{item.url}")
                         p=item.title
             .news-liulan
                a(href="/liulan")

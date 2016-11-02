@@ -1,3 +1,75 @@
 //
    Created by pl on 2016/10/28.
+//
+   Created by me on 2016/10/20.
+extends common
+block personal
+   link(rel="stylesheet" href="/stylesheets/personal.css")
+   link(rel='stylesheet', href='/stylesheets/banner.css')
+   link(rel='stylesheet', href='/stylesheets/cropper.css')
+   link(rel='stylesheet', href='/stylesheets/cropper-demo.css')
+   .top-bg
+      .top
+   .container.security.clearfix
+      .security-left.f_l
+         ul.security-list
+            li.f-list.first-li
+               a.first-level(href="javascript:void(0);") 个人中心
+               ul.child-list
+                  li
+                     a(href="/zhuye") 首页
+                  li
+                     a(href="javascript:void(0);") 大会员
+                  li
+                     a(href="/personal") 我的信息
+                  li.active
+                     a(href="/touxiang") 我的头像
+                  li
+                     a(href="javascript:void(0);") 成就勋章
+                  li
+                     a(href="javascript:void(0);") 账号安全
+                  li
+                     a(href="javascript:void(0);") 我的硬币
+                  li
+                     a(href="javascript:void(0);") 我的记录
+                  li
+                     a(href="javascript:void(0);") 实名认证
+                  li
+                     a(href="javascript:void(0);") 礼物兑换
+                  li
+                     a(href="javascript:void(0);") 邀请注册
+            li.f-list
+               a(href="javascript:void(0);") 个人空间
+            li.f-list
+               a(href="javascript:void(0);") 我的钱包
+            li.f-list
+               a(href="javascript:void(0);") 投稿管理
+            li.f-list
+               a(href="javascript:void(0);") 直播中心
+      div.form.clearfix
+         .security-right.f_l
+            .my-info-t
+               p 我的信息
+            .my-info-m
+               div.preview-container
+                  .image-container.target#cropper-target
+                     img.noavatar
+                  .large-wrapper
+                     .image-container.large#preview-large
+                        .image-wrapper
+                           img.noavatar
+                  div
+                     .image-container.medium#preview-medium
+                        .image-wrapper
+                           img.noavatar
+                     .image-container.small#preview-small
+                        .image-wrapper
+                           img.noavatar
+               div.btn-box
+                  button.btn-upload.btn-lg 提交
+                  div.file-box 选取图片
+                     input(type="file" name="avatar" id="cropper-input")
+   script(src="/javascripts/dist/cropper.js")
+   script(src="/javascripts/dist/touxiang.js")
+
 

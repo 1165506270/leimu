@@ -29,7 +29,7 @@ $(function(){
     $("#sumbit").click(function(){
         $.ajax({
             type:"get",
-            url:"/users/login",
+            url:"/login",
             data:{"username":$("input[name='user']").val(),
                 "password":$("input[name='password']").val()
             },

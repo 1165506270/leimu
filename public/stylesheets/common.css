@@ -71,6 +71,15 @@ a:hover{
 .head_left li:hover,.head_right li:hover{
     background: rgba(255,255,255,0.6);
 }
+.head_right .face-box:hover{
+    background: rgba(255,255,255,0.4);
+}
+.head_right a #face{
+    width: 35px;
+    height: 35px;
+    border-radius: 20px;
+    vertical-align:middle;
+}
 /*头部结束*/
 /*底部开始*/
 .foot{

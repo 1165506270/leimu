@@ -67,5 +67,5 @@ $.fn.waterFall=function(){
         }
     }
     /*设置items的高度*/
-    $(this).height(maxHeight+pad);
+    $(this).height(270);
 }

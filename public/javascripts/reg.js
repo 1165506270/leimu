@@ -6,7 +6,7 @@ $(function(){
         console.log(11)
         $.ajax({
             type:"get",
-            url:"/index",
+            url:"/censor_username",
             data:{user:$('#user').val()},
             beforeSend:function(){
                 if($('#user').val().length<=0){

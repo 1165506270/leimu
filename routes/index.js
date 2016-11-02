@@ -1,31 +1,18 @@
 var express = require('express');
 var router = express.Router();
-var mysql = require('mysql');
+var connection = require('../routes/db');
 var session = require("express-session");
-var fs = require("fs");
-var uid = 0;
-var multipart = require('connect-multiparty');//此模块用于帮助上传文件
-var multipartMiddleware = multipart();//实例化
+var images = require("images");
 router.use(session({
   secret:"bilibbili",
   cookie:{maxAge:60*1000*60*72}
 }))
-//创建一个connection
-var connection = mysql.createConnection({
-  host : '127.0.0.1', //主机
-  user :'root',//mysql认证用户名
-  password : "",//mysql认证用户名密码
-  port:'3306',//端口号
-  database:'huayou'
-});
-//创建一个connection
-connection.connect(function(err){
-  if(err){
-    console.log('[query]-:'+err)
-  }else{
-    console.log("[connection connect succeed")
-  }
-});
+
+var fs = require("fs");
+var uid = 0;
+var multipart = require('connect-multiparty');//此模块用于帮助上传文件
+var multipartMiddleware = multipart();//实例化
+
 /* GET home page. */
 //浏览模式
 router.get('/liulan',function(req,res){
@@ -44,72 +31,7 @@ router.get('/huoqu',function(req,res){
 //router.get('/', function(req, res, next) {
 //  res.render('zuopin');
 //});
-//手机端注册
-router.get('/mr', function(req, res) {
-  res.render('mreg', { title: '注册' });
-});
-//手机端登录页
-router.get('/ml', function(req, res) {
-  res.render('mlogin', { title: '登录' });
-});
-//注册账号是否已被注册验证
-router.get('/index',function(req,res){
-  console.log(req.query.user);
-  connection.query('SELECT username FROM users WHERE username="'+req.query.user+'"',function(err,rows){
-      if(err){
-        console.log(err);
-      }else{
-        if(rows.length>0){//当查询结果大于0时，即用户名已被注册，返回1
-          res.json({"flag":1});
-        }else{
-          res.json({"flag":2});//反之返回2
-        }
-      }
-    })
-});
-//电脑端登录页面
-//router.get("log",function(req,res){
-//  render("login",{title:"登录"})
-//})
-//电脑端注册页面
-//router.get("reg",function(req,res){
-//  render("reg",{title:"注册"});
-//})
-//账户注册成功提交时将信息写入数据库
-router.post('/regpost',function(req,res){
-  console.log(req.body.username);
-    connection.query('INSERT INTO users (username,password,uid) VALUES ("'+req.body.username+'",'+req.body.password+','+(++uid)+')',function(err,rows){
-      if(err){
-        console.log("出错了"+err);//当出现错误时输出错误信息，且浏览器端跳转回注册页面
-        res.redirect('/mr')
-      }else{
-        res.redirect("/ml");//无错误信息是跳转到登录页面
-      }
-    })
-});
-//登录请求验证
-router.get('/login',function(req,res){
-  connection.query("SELECT * FROM  users WHERE username='"+req.query.username+"' AND password="+req.query.password,function(err,rows){
-    if(err){
-      console.log("出错了"+err);
-      res.redirect('/ml');
-    }else{
-      if(rows.length==0){//无匹配项时即表示账号或密码不正确，返回1;
-        res.json({"flag":1});
-      }else{//反之则登录成功，执行下面的操作
-        //res.render('/index',{title:"登录成功"});
-        req.session.name=req.query.username;//保存session,用来验证登录状态，及用户的辨识
-        res.json({"flag":2,"url":"/user",name:req.query.username});//返回flag为2，及投稿页面地址由浏览器端的js程序进行跳转
-        //res.redirect('/index')
-      }
-    }
-  });
-});
-//登出操作
-router.get("/logout",function(req,res){
-  req.session.name=null;//清除服务器储存的session
-  res.redirect('/ml');//跳转到登录页面
-});
+
 //投稿页面
 router.get("/user",function(req,res){
   if(req.session.name){//通过session验证请求的浏览器端是否已经登录
@@ -156,14 +78,24 @@ router.get("/tougao",function(req,res){
 });
 //投稿功能
 router.post("/tougao",multipartMiddleware,function(req,res) {
-  console.log(req.files);
   var des_file = "/leimu/public/tupianku/" + req.files.img.originalFilename;//图片文件的保存路径及图片名字
-
+  var small_file = "/leimu/public/tupianku/small/" + req.files.img.originalFilename;//小图片文件的保存路径及图片名字
   fs.readFile(req.files.img.path, function (err, data) {//使用fs模块readFile打开图片文件
     fs.writeFile(des_file, data, function (err) {//用fs.writeFile将图片内容写入指定的路径中
       if (err) {
         console.log("出错了" + err);
       } else{
+        var imgg = images(des_file)
+        var height = imgg.height();
+        var width = imgg.width();
+
+        if(width>height){
+          images(imgg,(width-height)/2,0,height,height).save(small_file,{quality : 100});
+          images(small_file).resize(270,270).save(small_file,{quality : 100})
+        }else{
+          var imga =images(imgg,0,(height-width)/4,width,width).save(small_file,{quality : 100});
+          images(small_file).resize(270,270).save(small_file,{quality : 100})
+        }
         console.log(req.files.img.originalFilename+"上传成功");
       }
     })
@@ -183,19 +115,25 @@ router.post("/tougao",multipartMiddleware,function(req,res) {
 //信息页测试
 router.get("/by*",function(req,res){
   var url = req.url.slice(3);
+  connection.query("update tupianku set see = (see+1) where tupianku.uid ="+url);
   connection.query("SELECT * FROM tupianku WHERE pass=1 AND uid="+url+"",function(err,rows){
     if(err){
       console.log(err);
     }else{
-      connection.query("SELECT score FROM score WHERE aid="+url,function(err,rows1){
+      if(!rows[0]){
+        return;
+      }
+      var username = rows[0].username;
+      connection.query("SELECT face FROM users WHERE username='"+username+"'",function(err,rows1){
         if(err){
           console.log(err);
         }else{
-          var score = 0;
-          for(var i = 0 ; i<rows1.length ; i++){
-            score += rows1[i].score;
-          }
-          res.render("xinxi",{"data":rows[0],"score":score});
+          //var score = 0;
+          //for(var i = 0 ; i<rows1.length ; i++){
+          //  score += rows1[i].score;
+          //}
+          console.log(rows1)
+          res.render("xinxi",{"data":rows[0],"face":rows1[0].face});
         }
 
       })
@@ -208,24 +146,40 @@ router.get("/comment",function(req,res){
     if(err){
       console.log(err);
     }else{
+
       res.json({
         data:rows.reverse().slice(req.query.ps*(req.query.pn-1),req.query.ps*req.query.pn),
         length:rows.length,
-        uid:req.session.name?req.session.name:false
+        uid:req.session.name?req.session.name:false,
       });
     }
   })
 });
+//获得子评论
+//router.get("/comment/reply",function(req,res){
+//  connection.query("SELECT * FROM comment WHERE `aid` = "+req.body.aid+" AND `parent_floor` LIKE '"+req.body.floor+"'",function(err,rows){
+//    if(err){
+//      console.log(err);
+//    }else{
+//
+//      res.json({
+//        data:rows.reverse().slice(req.query.ps*(req.query.pn-1),req.query.ps*req.query.pn),
+//        length:rows.length,
+//        uid:req.session.name?req.session.name:false,
+//      });
+//    }
+//  })
+//});
 //提交评论
 router.post("/comment/add",function(req,res){
   var floor;
   //先获取当前最高评论的楼层，之后+1存储为新评论的楼层数
-  connection.query("SELECT COUNT(*) FROM comment WHERE aid = "+req.body.aid,function(err,rows){
+  connection.query("SELECT COUNT(*) FROM child_comment WHERE aid = "+req.body.aid,function(err,rows){
     if(err){
       console.log(err);
     }else{
       floor = rows[0]["COUNT(*)"]+1;//楼层数
-      connection.query('INSERT INTO comment (content,uname,time,aid,floor) VALUES ("'+req.body.message+'","'+req.session.name+'","'+req.body.time+'","'+req.body.aid+'","'+floor+'")',function(err,rows){
+      connection.query('INSERT INTO comment (face,content,uname,time,aid,floor) VALUES ("'+req.body.face+'","'+req.body.message+'","'+req.session.name+'","'+req.body.time+'","'+req.body.aid+'","'+floor+'")',function(err,rows){
         if(err){
           console.log(err);
         }else{
@@ -235,6 +189,25 @@ router.post("/comment/add",function(req,res){
     }
   })
 });
+//提交子评论
+//router.post("/comment/childAdd",function(req,res){
+//  var floor;
+//  connection.query("SELECT COUNT(*) FROM `child_comment` WHERE `aid` = "+req.body.aid+" AND `parent_floor` LIKE '"+req.body.floor+"'",function(err,rows){
+//      if(err){
+//        console.log(err);
+//      }else{
+//        console.log(rows[0]["COUNT(*)"]+1)
+//        floor = rows[0]["COUNT(*)"]+1;
+//        connection.query('INSERT INTO child_comment (face,content,uname,time,aid,floor,parent_floor) VALUES ("'+req.body.face+'","'+req.body.message+'","'+req.session.name+'","'+req.body.time+'","'+req.body.aid+'","'+floor+'","'+req.body.floor+'")',function(err,rows){
+//          if(err){
+//            console.log(err);
+//          }else{
+//            res.json({})
+//          }
+//        })
+//      }
+//  })
+//});
 //提交评分
 router.post("/postScore",function(req,res){
   connection.query("INSERT INTO score (aid,score,uid) VALUES ('"+req.body.aid+"','"+req.body.score+"','"+req.session.name+"')",function(err,rows){
@@ -303,3 +276,4 @@ router.get("/admin/pic",function(req,res){
   })
 });
 module.exports = router;
+

@@ -10,7 +10,7 @@ $(function(){
         $(".borwseMode-siderBtn-back").show();//显示放大按钮
         $(".borseSiderBig").hide();//隐藏大信息栏
         $(".borwseSiderMini").css({"top":0})//把小信息栏放下
-        $(".pubuliu").css("width","1300px").waterFall();//为左边的图片显示盒子设置宽度，并重新瀑布流布局
+        $(".pubuliu").css("width","1300px")//为左边的图片显示盒子设置宽度，并重新瀑布流布局
 
     })
     $(".borwseMode-siderBtn-back").click(function(){
@@ -18,7 +18,8 @@ $(function(){
         $(this).hide()//隐藏这个放大按钮
         $(".borseSiderBig").show();//显示大信息栏
         $(".borwseSiderMini").css({"top":"-252px"})//将小信息栏top设为-252px，使其显示在浏览器窗口以外
-        $(".pubuliu").css("width","1000px").waterFall();//为左边的图片显示盒子设置宽度，并重新瀑布流布局
+        $(".pubuliu").css("width","1000px")//为左边的图片显示盒子设置宽度，并重新瀑布流布局
+
     })
     function getData(page){
         $.ajax({
@@ -42,7 +43,7 @@ $(function(){
                 for(var i=0;i<data.length;i++){//循环遍历传来的json数组，
                     $("<div>",{
                         html:"<a href='by"+data[i].uid+"'> "+
-                        "<img src='/tupianku/"+data[i].url+"'>" +
+                        "<img src='/tupianku/small/"+data[i].url+"'>" +
                         "<div class='desc'>"+data[i].title+ "</div>" +
                         "</a>",
                         class:"item"
@@ -59,7 +60,7 @@ $(function(){
                         })
                     })
                 })
-                $(".pubuliu").waterFall();//调用waterFall()进行瀑布流布局
+                //$(".pubuliu").waterFall();//调用waterFall()进行瀑布流布局
                 index++;
                 flag1=false;
             }

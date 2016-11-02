@@ -56,14 +56,14 @@ $(function(){
                 $.each(data.scoreArr, function (i, v) {
                     pinfen+= v.score;
                     for (var i = 0; i < arr.length; i++) {
-                        if (arr[i]["title"] == v.score) {
+                        if (arr[i]["title"] == v.score/2) {
                             arr[i]["num"] += 1;
                         }
                     }
                 });
                 $(".person-content-info .pinfen span").text(pinfen);//更新总分数
                 //计算得分占比
-                var str = ""+(($(".person-content-info .pinfen span").text()/(data.scoreArr.length*5))*10);
+                var str = ""+(($(".person-content-info .pinfen span").text()/(data.scoreArr.length*10))*10);
                 //更新的分占比
                 $(".rete_avg_num_f").text((isNaN(str.slice(0,3))?"0":str.slice(0,3))+"/"+pinfen);
                 //关于评分的条形图绘制

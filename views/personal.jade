@@ -1,0 +1,166 @@
+//
+   Created by me on 2016/10/20.
+extends common
+block personal
+    link(rel="stylesheet" href="/stylesheets/personal.css")
+    link(rel='stylesheet', href='/stylesheets/banner.css')
+    .top-bg
+        .top
+    .container.security.clearfix
+        .security-left.f_l
+            ul.security-list
+                li.f-list.first-li
+                    a.first-level(href="javascript:void(0);") 个人中心
+                    ul.child-list
+                        li
+                            a(href="/zhuye") 首页
+                        li
+                            a(href="javascript:void(0);") 大会员
+                        li.active
+                            a(href="/personal") 我的信息
+                        li
+                            a(href="/touxiang") 我的头像
+                        li
+                            a(href="javascript:void(0);") 成就勋章
+                        li
+                            a(href="javascript:void(0);") 账号安全
+                        li
+                            a(href="javascript:void(0);") 我的硬币
+                        li
+                            a(href="javascript:void(0);") 我的记录
+                        li
+                            a(href="javascript:void(0);") 实名认证
+                        li
+                            a(href="javascript:void(0);") 礼物兑换
+                        li
+                            a(href="javascript:void(0);") 邀请注册
+                li.f-list
+                    a(href="javascript:void(0);") 个人空间
+                li.f-list
+                    a(href="javascript:void(0);") 我的钱包
+                li.f-list
+                    a(href="javascript:void(0);") 投稿管理
+                li.f-list
+                    a(href="javascript:void(0);") 直播中心
+        form(action='./totus/index.js',enctype="multipart/form-data")
+            .security-right.f_l
+                .my-info-t
+                    p 我的信息
+                .my-info-m
+                    .face-preview
+                        a(href="/username_face",id="face-change",class="face-change") 更换头像
+                        //input(type="file" name="face" id="file" style="display:none" multiple="multiple")
+                        span.face-change#face-takedown 卸下挂件
+                        img#face-avatar(src="/face/#{data.face?data.face:noface.jpg}")
+                        img
+                .my-info-b
+                    ul
+                        li
+                            .sb-info
+                                p.sbi-l 昵称 :
+                                .sbi-m.f_l
+                                    span
+                                        input.user-id(type="text",name="uname",value="#{data.name}")
+                                .sbi-r 注：修改一次昵称需要消耗6个硬币
+                        li
+                            .sb-info
+                                p.sbi-l 用户名 :
+                                .sbi-m
+                                    span=data.name
+                        li
+                            .sb-info
+                                p.sbi-l 我的签名 :
+                                .sbi-m
+                                    span
+                                        textarea(name="sign" cols="30" rows="10" class="my-sign")=data.describe
+                        li(style="padding-top:50px")
+                            .sb-info()
+                                p.sbi-l.f_l 性别 :
+                                .sbi-m
+                                    ul.sex#sex-ul
+                                        li(class=data.sex=="男"?'blue':'',data-sex="男") 男
+                                        li(class=data.sex=='女'?'blue':'' data-sex="女") 女
+                                        li(class=data.sex=='保密'?'blue':'' data-sex="保密") 保密
+                        li
+                            .sb-info
+                                p.sbi-l 出生日期 :
+                                .sbi-m
+                                    span
+                                        input(type="date",name="date",style="color:#aaa",id="date" value='#{data.birthday}')
+                        li
+                            .sb-info
+                                p.sbi-l 所在地 :
+                                .sbi-m
+                                    .control-btn-select
+                                        span
+                                        select(name="province",id="province")
+                                            option 选择一级地区
+                                            option 北京市
+                                            option 上海市
+                                            option 天津市
+                                            option 重庆市
+                                            option 广东省
+                                            option 福建省
+                                            option 浙江省
+                                            option 江苏省
+                                            option 山东省
+                                            option 辽宁省
+                                            option 江西省
+                                            option 四川省
+                                            option 陕西省
+                                            option 湖北省
+                                            option 河南省
+                                            option 河北省
+                                            option 山西省
+                                            option 内蒙古
+                                            option 吉林省
+                                            option 黑龙江
+                                            option 安徽省
+                                            option 湖南省
+                                            option 广西区
+                                            option 海南省
+                                            option 云南省
+                                            option 贵州省
+                                            option 西藏区
+                                            option 甘肃省
+                                            option 宁夏区
+                                            option 青海省
+                                            option 新疆区
+                                            option 香港区
+                                            option 澳门区
+                                            option 台湾省
+                                    .control-btn-select
+                                        span
+                                        select(name="city",id="city")
+                                            option 选择具体地区
+                        li
+                            .sb-info
+                                p.sbi-l 感情状况 :
+                                .sbi-m
+                                    .control-btn-select
+                                        span
+                                        select#marital(value=data.maritalStatus)
+                                            option(selected=data.maritalStatus==null?'selector':'') --请选择--
+                                            option(selected=selected=data.maritalStatus=='未婚'?'selector':'')   未婚
+                                            option(selected=selected=data.maritalStatus=='已婚'?'selector':'')   已婚
+                                            option(selected=selected=data.maritalStatus=='离异'?'selector':'')   离异
+                                            option(selected=selected=data.maritalStatus=='丧偶'?'selector':'')   丧偶
+                        li
+                            .sb-info
+                                p.sbi-l 交友目的 :
+                                .sbi-m
+                                    .control-btn-select
+                                        span
+                                        select
+                                            option --请选择--
+                                            option   网友
+                                            option   恋人
+                                            option   玩伴
+                                            option  共同兴趣
+                                            option  男性朋友
+                                            option  女性朋友
+
+                input.my-sb-save(type="button",value="保存" id="my-sb-save")
+    script(src="/javascripts/city.js")
+    script(src="/javascripts/personal.js")
+

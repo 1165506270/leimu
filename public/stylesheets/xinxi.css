@@ -305,6 +305,9 @@
     padding-left: 90px;
     box-sizing: border-box;
 }
+.child-comment-input{
+    padding-left: 0;
+}
 .comment-input textarea{
     width: 85%;
     height: 52px;
@@ -426,4 +429,16 @@
     border-radius: 3px;
     margin: 0 5px;
     text-align: center;
+}
+.tips-login{
+    width: 85%;
+    height: 52px;
+    padding: 5px 10px;
+    border: 1px solid #e5e9ef;
+    border-radius: 3px;
+    resize: none;
+    float: left;
+    text-align: center;
+    line-height: 52px;
+    background: #eee;
 }

@@ -2,6 +2,9 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/public/javascripts/admin.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/javascripts/common.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/routes/users.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/admin.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/touxiang.jade" charset="UTF-8" />
   </component>
 </project>

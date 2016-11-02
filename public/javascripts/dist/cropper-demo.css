@@ -1,8 +1,8 @@
-form {
+.container.form {
   margin-left: 18px;
+  float: right;
 }
-
-form > p {
+.form > p {
   padding-top: 22px;
   line-height: 40px;
   font-size: 14px;
@@ -12,7 +12,7 @@ form > p {
   overflow: hidden;
 }
 
-form > p .btn-upload {
+.form > p .btn-upload {
   width: 120px;
   padding: 12px 20px;
   font-size: 14px;
@@ -22,7 +22,7 @@ form > p .btn-upload {
   margin-right: 20px;
 }
 
-form > p input {
+.form > p input {
   position: absolute;
   font-size: 480px;
   top: 22px;
@@ -34,7 +34,7 @@ form > p input {
   cursor: pointer;
 }
 
-form .btn-submit {
+.form .btn-submit {
   font-size: 14px;
   padding: 12px 20px;
   width: 120px;

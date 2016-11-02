@@ -7,6 +7,7 @@ html(lang='en')
       title 一个简单的原创画画交流网站
       link(rel='stylesheet', href='/stylesheets/common.css')
       script(src="/javascripts/jquery.js")
+      script(src="/javascripts/common.js")
    body
       .z_top.head
          .head_nav
@@ -27,8 +28,9 @@ html(lang='en')
                         a(href='#') BML
                .head_right.fr
                   ul
-                     li
-                        a(href='#') &#x5934;&#x50CF;
+                     li.face-box
+                        a(href='/personal')
+                           img(id="face" src="/images/noface.gif")
                      li
                         a(href='#') &#x6D88;&#x606F;
                      li
@@ -39,14 +41,15 @@ html(lang='en')
                         a(href='#') &#x5386;&#x53F2;
                      li
                         a(href='/tougao') &#x6295;&#x7A3F;
-                     li
-                        a(href="/logout") 登出
+                     li#log
+                        a(href="/logout" id="logout") 登出
       block banner
       block zuopin
       block tougao
       block xinxi
       block tiaozhuan
       block admin
+      block personal
       .foot.clearfix
          .box
             .foot_top

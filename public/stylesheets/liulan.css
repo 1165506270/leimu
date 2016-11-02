@@ -228,11 +228,16 @@
 }
 .pubuliu .item{
     width: 228px;
-    position: absolute;
+    height: 228px;
+    /*position: absolute;*/
+    position: relative;
     overflow: hidden;
+    float: left;
+    margin: 5px 5px 0 0;
 }
 .pubuliu .item img{
-    width: 100%;
+    width: 228px;
+    height: 228px;
     transition: all 0.2s;
 }
 .pubuliu .item:hover .desc{

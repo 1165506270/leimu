@@ -51,6 +51,7 @@
 }
 .news-content .news-item div img {
     height: 170px;
+    width: 170px;
 }
 .news-content .news-item p{
     /*line-height: 34px;*/

@@ -24,15 +24,16 @@
             'sendReply':'/add',//发表评论
             'getReply':'',//获取评论
             'getChildReply':'reply',//获取子回复
-            'getCount':"/count"//获取评论数
+            'getCount':"/count",//获取评论数
+            'parise':"/action"//赞或取消赞
         }
     }
     var BLIICOMMENT ='biliComment',
         pageSize = 10,//定义一页显示的评论条数
-        sort,//当前页码
+        sort,//排序方式
         type,//评论显示的排序
         ele,//评论盒子
-        pn,//页码
+        pn,//当前页码
         userFace,//用户头像路径
         platform,//设备类型
         login,//登录状态
@@ -89,7 +90,7 @@
                 '</ul>',
                 '<div class="comment-pager"></div>'
             ];
-            if (true) {
+            if (getCookie("uid")) {
                 //如果已经登录
                 var face = userFace;
                 tempDom = [
@@ -101,8 +102,8 @@
                 login = 1;
             } else {
                 tempDom = [
-                    '<div class="comment-input show-login">',
-                    '<p class="tips-login">请先<a href=\'https://account.bilibili.com/login\' class="btn-login">登录</a>后发表评论 (・ω・)</p>',
+                    '<div class="comment-input show-login clearfix"">',
+                    '<p class="tips-login">请先<a href="/ml" class="btn-login">登录</a>后发表评论 (・ω・)</p>',
                     '<button type="button" class="btn-comment disabled">发表评论</button>',
                     '</div>'
                 ].join('');
@@ -127,8 +128,8 @@
             //绑定换页事件
             flip();
             //绑定登录事件
-
-
+            //绑定子回复触发
+            //replyE();
         }
     //获取评论列表方法（ajax）
     function getCommentList(sort,pn){
@@ -177,6 +178,7 @@
             item = json[i] || {};//评论的每一项
             member = item.uname || {};//评论作者的id
             content = item.content || {};//评论的内容部分
+            face = item.face,//头像
             plat = content.plat || 0;
             childReply = item.replies || []
 
@@ -184,7 +186,7 @@
                 '<div class="item ' + (isChild ? "child-item" : "") + '">',
                 '<div class="photo">',
                 '<a href="' + (item.uid || empty) + '" target="_blank" data-mid="' + (item.uid || empty) + '" data-card="' + (member.uname || empty) + '">',
-                '<img src="/images/noface.gif" class="face">',
+                '<img src="'+face+'" class="face">',
                 '</a>',
                 '</div>',
                 '<div class="main">',
@@ -199,6 +201,27 @@
             ].join(""))
         }
         return commentListDom.join("");
+    }
+    //获取子评论
+    function getRootCommenttList(root,pn,ele){
+        $.ajax({
+            url:urlConfig.baseUrl + urlConfig.specificUrl.getChildReply,
+            type:"get",
+            data:{
+                aid:aid,
+                type:type,
+                pn:pn||1,
+                ps:5,
+                sort:sort||0
+            },
+            success:function(data){
+                var reply = $(".more-rcount",ele).attr('data-number');
+                ele.html(setCommentList(data.data||{},true));
+            },
+            error:function(){
+                $('.more-rcount',ele).html('<span>加载错误，请<a class=\'reload-root-comment\'>点击重试</a></span>');
+            }
+        })
     }
     //构建页码控制组件
     function setFlipControl(pn,total){//pn为当前页数，total为总页数
@@ -256,79 +279,102 @@
             }
         });
     }
-    global.comment = init
+    global.comment = init;
     //发表评论
     function publishComment(){
         //$(document).on('click','comment-wrap .comment-input .btn-comment',function(e){
         //
-            $('.btn-comment').click(function(e){
-            if($(e.currentTarget).hasClass('disabled')){
-                return;
-            }
-
-            var $btn = $(e.currentTarget);
-            var $holder = $btn.parents('.comment-input');
-            var $val = $btn.prevAll('.cont-comment').val();
-            var deep = 0;
-            if($btn.hasClass('lock')){
-                //feedback("正在回复中请不要重复操作");
-                return;
-            }
-            if($val.length<3||$val.length>3000){
-                //feedback('请输入3-1000个字的评论内容');
-                new Tanchuang().init({
-                    title:"输入错误",
-                    w:300,
-                    h:200,
-                    dir:"center",
-                    content:"请输入3-1000个字的评论内容",
-                    mark:false
-                })
-                return
-            }
-            var option = {
-                jsonp : 'jsonp',
-                type : type,
-                message : $val || '',
-                plat : 1,
-                aid:aid,
-                time:new Date().getTime()/1000,
-                //code : $captcha,
-                //r : Math.random()
-            };
-            $btn.addClass("lock");
-            $.ajax({
-                url: urlConfig.baseUrl + urlConfig.specificUrl.sendReply,
-                type: 'POST',
-                dataType: 'json',
-                xhrFields: {
-                    withCredentials: true
-                },
-                data:option,
-                success:function(data){
-                    $btn.removeClass('lock');
-                    //把这个评论加到页面上
-                    if(true){
-                        //sendMsg('发送成功');
-                        new Tanchuang().init({
-                            title:"成功",
-                            w:300,
-                            h:200,
-                            dir:"center",
-                            content:"发送成功",
-                            mark:false
-                        })
-                        $btn.prevAll('.cont-comment').val('');
-                        getCommentList(sort,pn);
-                        $('.captcha-holder').remove();
-                    }
-                },
-                error:function(){
-                    $btn.removeClass("lock");
+            $('.btn-comment').live("click",function(){
+                if($(this).hasClass('disabled')){
+                    return;
                 }
-            });
+                var $btn = $(this);
+                var floor;
+                console.log($('.child-comment-input').length)
+                if($btn.parents('.child-comment-input').length>0){
+
+                    floor = $btn.parents('.child-comment-input').prevAll(".infor").find(".floor-num").text();
+                    console.log(floor)
+                    floor = parseInt(floor.replace("#",""));
+                }
+                var $val = $btn.prevAll('.cont-comment').val();
+                var deep = $(this).parent().hasClass("child-comment-input")?2:1;
+                if($btn.hasClass('lock')){
+                    //feedback("正在回复中请不要重复操作");
+                    return;
+                }
+                if($val.length<3||$val.length>3000){
+                    //feedback('请输入3-1000个字的评论内容');
+                    new Tanchuang().init({
+                        title:"输入错误",
+                        w:300,
+                        h:200,
+                        dir:"center",
+                        content:"请输入3-1000个字的评论内容",
+                        mark:false
+                    })
+                    return
+                }
+                var option = {
+                    type : type,
+                    message : $val || '',
+                    plat : 1,
+                    aid:aid,
+
+                    face:$("#face")[0].src,
+                    time:new Date().getTime()/1000,
+                    floor:floor
+                    //code : $captcha,
+                    //r : Math.random()
+                };
+                $btn.addClass("lock");
+                $.ajax({
+                    url: urlConfig.baseUrl + (deep===1?"/add":"/childAdd"),
+                    type: 'POST',
+                    dataType: 'json',
+                    xhrFields: {
+                        withCredentials: true
+                    },
+                    data:option,
+                    success:function(data){
+                        $btn.removeClass('lock');
+                        //把这个评论加到页面上
+                        if(true){
+                            //sendMsg('发送成功');
+                            new Tanchuang().init({
+                                title:"成功",
+                                w:300,
+                                h:200,
+                                dir:"center",
+                                content:"发送成功",
+                                mark:false
+                            })
+                            $btn.prevAll('.cont-comment').val('');
+                            getCommentList(sort,pn);
+                            $('.captcha-holder').remove();
+                        }
+                    },
+                    error:function(){
+                        $btn.removeClass("lock");
+                    }
+                });
         })
     }
+    //function replyE (){
+    //    $('.tools .reply').live('click',function(e){
+    //        console.log(112)
+    //        if(!this.flag){
+    //            console.log($(e.target))
+    //            $(e.target).parents(".infor").after([
+    //            '<div class="child-comment-input comment-input show-loginout clearfix">', // 登陆之后为show-login;未登录为show-loginout
+    //                '<textarea class="cont-comment" placeholder="请输入3-1000个字的评论内容"></textarea>',
+    //                '<button type="button" class="btn-comment">发表评论</button>',
+    //                '</div>'
+    //        ].join(''));
+    //            this.flag = true;
+    //        }
+    //    })
+    //}
     function human_date(t) {
         var now =Math.floor(new Date().getTime() / 1000);
         var td_start = new Date();
@@ -357,5 +403,14 @@
             if (M < 10) M = "0" + M;
             return n_d.getFullYear() + "-" + m + "-" + d + " " + H + ":" + M;
         }
+    }
+    //获取cookie中uid的值（用来判断是否已经登录）
+    function getCookie(name)
+    {
+        var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+        if(arr=document.cookie.match(reg))
+            return unescape(arr[2]);
+        else
+            return null;
     }
 })(window)
