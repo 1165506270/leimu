@@ -29,7 +29,7 @@ $(function(){
     $("#sumbit").click(function(){
         $.ajax({
             type:"get",
-            url:"/login",
+            url:"/users/login",
             data:{"username":$("input[name='user']").val(),
                 "password":$("input[name='password']").val()
             },
@@ -59,10 +59,23 @@ $(function(){
                     })
                     creatCode();
                 }else{
+
                     alert(data.name+"登录成功");
-                    window.location.href=data.url;
+
+                   if(document.referrer){
+                       var reg =/http:\/\/([^\/]+)/;
+                       var mrPath = document.referrer.replace(document.referrer.match(reg)[0],"")
+                        if(document.referrer.match(reg)[1]==window.location.host&&mrPath == "/users/mr"){
+                           window.location.href = document.referrer;
+                        }else{
+                           window.location.href="/zhuye";
+                        }
+                   }else{
+                       window.location.href="/zhuye";
+                   }
                 }
             }
         })
+
     })
 })
