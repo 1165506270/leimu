@@ -1,13 +1,14 @@
 .body{
-    margin: 0 auto;
+    /*margin: 0 auto;*/
     margin-top: 50px;
-    width: 980px;
-    border: 1px solid #cccccc;
+    /*width: 980px;*/
+    /*border: 1px solid #cccccc;*/
 }
+
 .admin_left{
     float: left;
     width: 179px;
-    border-right: 1px solid #66ccff;
+    /*border-right: 1px solid #66ccff;*/
     height: 600px;
 }
 .admin_content{

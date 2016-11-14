@@ -43,7 +43,7 @@ $(function(){
                 for(var i=0;i<data.length;i++){//循环遍历传来的json数组，
                     $("<div>",{
                         html:"<a href='by"+data[i].uid+"'> "+
-                        "<img src='/tupianku/small/"+data[i].url+"'>" +
+                        "<img src='http://og0ymg87t.bkt.clouddn.com/"+data[i].url+"-pic'>" +
                         "<div class='desc'>"+data[i].title+ "</div>" +
                         "</a>",
                         class:"item"

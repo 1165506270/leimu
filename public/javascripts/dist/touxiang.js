@@ -44,7 +44,7 @@ $(".btn-upload").click(function(){
     fd.append("height",rects.height);
     fd.append("top",rects.top);
     $.ajax({
-        url:"/ceshi",
+        url:"/face_post",
         data:fd,
         type:'post',
         processData: false,
