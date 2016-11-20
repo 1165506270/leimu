@@ -1,158 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b11fe99f-304d-40fe-bec7-aa0e6cbeb321" name="默认的" comment="增加了图片和头像裁剪功能">
-      <change type="DELETED" beforePath="F:\leimu\.idea\encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\.idea\workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\app.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\handlers\main.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\handlers\users.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\.3.0.0@images\node_modules\nan\.npminstall.done" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\.3.0.0@images\node_modules\nan\CHANGELOG.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\.3.0.0@images\node_modules\nan\LICENSE.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\.3.0.0@images\node_modules\nan\README.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\.3.0.0@images\node_modules\nan\doc\asyncworker.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\.3.0.0@images\node_modules\nan\doc\buffers.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\.3.0.0@images\node_modules\nan\doc\callback.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\.3.0.0@images\node_modules\nan\doc\converters.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\.3.0.0@images\node_modules\nan\doc\errors.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\.3.0.0@images\node_modules\nan\doc\maybe_types.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\.3.0.0@images\node_modules\nan\doc\methods.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\.3.0.0@images\node_modules\nan\doc\new.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\.3.0.0@images\node_modules\nan\doc\node_misc.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\.3.0.0@images\node_modules\nan\doc\object_wrappers.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\.3.0.0@images\node_modules\nan\doc\persistent.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\.3.0.0@images\node_modules\nan\doc\scopes.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\.3.0.0@images\node_modules\nan\doc\script.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\.3.0.0@images\node_modules\nan\doc\string_bytes.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\.3.0.0@images\node_modules\nan\doc\v8_internals.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\.3.0.0@images\node_modules\nan\doc\v8_misc.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\.3.0.0@images\node_modules\nan\include_dirs.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\.3.0.0@images\node_modules\nan\nan.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\.3.0.0@images\node_modules\nan\nan_callbacks.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\.3.0.0@images\node_modules\nan\nan_callbacks_12_inl.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\.3.0.0@images\node_modules\nan\nan_callbacks_pre_12_inl.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\.3.0.0@images\node_modules\nan\nan_converters.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\.3.0.0@images\node_modules\nan\nan_converters_43_inl.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\.3.0.0@images\node_modules\nan\nan_converters_pre_43_inl.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\.3.0.0@images\node_modules\nan\nan_implementation_12_inl.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\.3.0.0@images\node_modules\nan\nan_implementation_pre_12_inl.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\.3.0.0@images\node_modules\nan\nan_maybe_43_inl.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\.3.0.0@images\node_modules\nan\nan_maybe_pre_43_inl.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\.3.0.0@images\node_modules\nan\nan_new.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\.3.0.0@images\node_modules\nan\nan_object_wrap.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\.3.0.0@images\node_modules\nan\nan_persistent_12_inl.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\.3.0.0@images\node_modules\nan\nan_persistent_pre_12_inl.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\.3.0.0@images\node_modules\nan\nan_string_bytes.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\.3.0.0@images\node_modules\nan\nan_typedarray_contents.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\.3.0.0@images\node_modules\nan\nan_weak.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\.3.0.0@images\node_modules\nan\package.json" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\.3.0.0@images\node_modules\nan\tools\1to2.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\.3.0.0@images\node_modules\nan\tools\README.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\.3.0.0@images\node_modules\nan\tools\package.json" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\async\LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\async\README.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\async\component.json" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\async\lib\async.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\async\package.json" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\images\node_modules\nan\.npminstall.done" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\images\node_modules\nan\CHANGELOG.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\images\node_modules\nan\LICENSE.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\images\node_modules\nan\README.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\images\node_modules\nan\doc\asyncworker.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\images\node_modules\nan\doc\buffers.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\images\node_modules\nan\doc\callback.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\images\node_modules\nan\doc\converters.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\images\node_modules\nan\doc\errors.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\images\node_modules\nan\doc\maybe_types.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\images\node_modules\nan\doc\methods.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\images\node_modules\nan\doc\new.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\images\node_modules\nan\doc\node_misc.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\images\node_modules\nan\doc\object_wrappers.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\images\node_modules\nan\doc\persistent.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\images\node_modules\nan\doc\scopes.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\images\node_modules\nan\doc\script.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\images\node_modules\nan\doc\string_bytes.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\images\node_modules\nan\doc\v8_internals.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\images\node_modules\nan\doc\v8_misc.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\images\node_modules\nan\include_dirs.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\images\node_modules\nan\nan.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\images\node_modules\nan\nan_callbacks.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\images\node_modules\nan\nan_callbacks_12_inl.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\images\node_modules\nan\nan_callbacks_pre_12_inl.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\images\node_modules\nan\nan_converters.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\images\node_modules\nan\nan_converters_43_inl.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\images\node_modules\nan\nan_converters_pre_43_inl.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\images\node_modules\nan\nan_implementation_12_inl.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\images\node_modules\nan\nan_implementation_pre_12_inl.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\images\node_modules\nan\nan_maybe_43_inl.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\images\node_modules\nan\nan_maybe_pre_43_inl.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\images\node_modules\nan\nan_new.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\images\node_modules\nan\nan_object_wrap.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\images\node_modules\nan\nan_persistent_12_inl.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\images\node_modules\nan\nan_persistent_pre_12_inl.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\images\node_modules\nan\nan_string_bytes.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\images\node_modules\nan\nan_typedarray_contents.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\images\node_modules\nan\nan_weak.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\images\node_modules\nan\package.json" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\images\node_modules\nan\tools\1to2.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\images\node_modules\nan\tools\README.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\images\node_modules\nan\tools\package.json" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\nan\.npminstall.done" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\nan\CHANGELOG.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\nan\LICENSE.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\nan\README.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\nan\doc\asyncworker.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\nan\doc\buffers.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\nan\doc\callback.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\nan\doc\converters.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\nan\doc\errors.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\nan\doc\maybe_types.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\nan\doc\methods.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\nan\doc\new.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\nan\doc\node_misc.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\nan\doc\object_wrappers.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\nan\doc\persistent.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\nan\doc\scopes.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\nan\doc\script.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\nan\doc\string_bytes.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\nan\doc\v8_internals.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\nan\doc\v8_misc.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\nan\include_dirs.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\nan\nan.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\nan\nan_callbacks.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\nan\nan_callbacks_12_inl.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\nan\nan_callbacks_pre_12_inl.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\nan\nan_converters.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\nan\nan_converters_43_inl.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\nan\nan_converters_pre_43_inl.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\nan\nan_implementation_12_inl.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\nan\nan_implementation_pre_12_inl.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\nan\nan_maybe_43_inl.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\nan\nan_maybe_pre_43_inl.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\nan\nan_new.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\nan\nan_object_wrap.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\nan\nan_persistent_12_inl.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\nan\nan_persistent_pre_12_inl.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\nan\nan_string_bytes.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\nan\nan_typedarray_contents.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\nan\nan_weak.h" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\nan\package.json" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\nan\tools\1to2.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\nan\tools\README.md" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\node_modules\nan\tools\package.json" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\package.json" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\public\face\83a9de90f603738da20710d5b61bb051f919ec24.jpg" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\public\javascripts\dist\touxiang.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\public\javascripts\liulan.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\public\stylesheets\admin.css" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\public\tupianku\20151108171508_ZNWct.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\routes.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\views\admin.html" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\views\common.jade" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\views\xinxi.jade" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\views\zuopin.jade" afterPath="" />
-      <change type="DELETED" beforePath="F:\leimu\浏览器兼容性汇总(CSS+js).doc" afterPath="" />
+    <list default="true" id="b11fe99f-304d-40fe-bec7-aa0e6cbeb321" name="默认的" comment="0.0.8版">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/db.js" afterPath="$PROJECT_DIR$/routes/db.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handlers/main.js" afterPath="$PROJECT_DIR$/handlers/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes.js" afterPath="$PROJECT_DIR$/routes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handlers/users.js" afterPath="$PROJECT_DIR$/handlers/users.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="a303cb81-ab39-4887-a526-b3fa1ab1ab0d" name="拒绝提交:默认的" comment="" />
     <ignored path="leimu.iws" />
@@ -173,14 +29,14 @@
     <favorites_list name="leimu" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.75">
+    <splitter split-orientation="horizontal" split-proportion="0.6979167">
       <split-first>
         <leaf>
           <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/routes/index.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="211" column="43" selection-start-line="211" selection-start-column="43" selection-end-line="211" selection-end-column="43" />
+                  <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
                   <folding />
                 </state>
               </provider>
@@ -190,17 +46,7 @@
             <entry file="file://$PROJECT_DIR$/views/touxiang.jade">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="38" column="20" selection-start-line="17" selection-start-column="15" selection-end-line="39" selection-end-column="55" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="users.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/routes/users.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="127" column="21" selection-start-line="127" selection-start-column="21" selection-end-line="127" selection-end-column="40" />
+                  <caret line="45" column="49" selection-start-line="45" selection-start-column="49" selection-end-line="45" selection-end-column="49" />
                   <folding />
                 </state>
               </provider>
@@ -210,10 +56,8 @@
             <entry file="file://$PROJECT_DIR$/handlers/users.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="251" column="0" selection-start-line="251" selection-start-column="0" selection-end-line="252" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#0#38#0" expanded="false" />
-                  </folding>
+                  <caret line="173" column="247" selection-start-line="173" selection-start-column="247" selection-end-line="173" selection-end-column="247" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -221,28 +65,18 @@
           <file leaf-file-name="admin.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/html/admin.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="29.586206">
-                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="common.jade" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/views/common.jade">
-              <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+                  <caret line="44" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="routes.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="routes.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/routes.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.70320404">
+                  <caret line="44" column="1" selection-start-line="44" selection-start-column="1" selection-end-line="44" selection-end-column="1" />
                   <folding>
                     <element signature="e#0#38#0" expanded="false" />
                   </folding>
@@ -250,11 +84,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="mindex.jade" pinned="false" current-in-tab="true">
+          <file leaf-file-name="mindex.jade" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/views/mindex.jade">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.4806071">
-                  <caret line="32" column="69" selection-start-line="32" selection-start-column="69" selection-end-line="32" selection-end-column="69" />
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="27" column="45" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
                   <folding />
                 </state>
               </provider>
@@ -264,9 +98,9 @@
             <entry file="file://$PROJECT_DIR$/handlers/main.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+                  <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
                   <folding>
-                    <element signature="e#0#38#0" expanded="false" />
+                    <marker date="1479610580172" expanded="false" signature="0:4" placeholder="/** Created by pl on 2016/11/1. ...*/" />
                   </folding>
                 </state>
               </provider>
@@ -275,7 +109,7 @@
           <file leaf-file-name="mreg.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/views/mreg.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-0.0">
+                <state vertical-scroll-proportion="0.0">
                   <caret line="0" column="188" selection-start-line="0" selection-start-column="188" selection-end-line="0" selection-end-column="188" />
                   <folding />
                 </state>
@@ -306,11 +140,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.4064081">
+                  <caret line="54" column="32" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="32" />
                   <folding />
                 </state>
               </provider>
@@ -358,10 +192,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="reg.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="reg.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/javascripts/reg.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.14839798">
+                <state vertical-scroll-proportion="0.0">
                   <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
                   <folding />
                 </state>
@@ -438,19 +272,19 @@
         <option value="$PROJECT_DIR$/public/stylesheets/xinxi.css" />
         <option value="$PROJECT_DIR$/public/javascripts/comment.js" />
         <option value="$PROJECT_DIR$/views/banner.jade" />
-        <option value="$PROJECT_DIR$/routes/index.js" />
         <option value="$PROJECT_DIR$/routes/routes.js" />
         <option value="$PROJECT_DIR$/public/javascripts/login.js" />
         <option value="$PROJECT_DIR$/views/personal.jade" />
         <option value="$PROJECT_DIR$/public/javascripts/reg.js" />
         <option value="$PROJECT_DIR$/views/mreg.jade" />
         <option value="$PROJECT_DIR$/routes/users.js" />
-        <option value="$PROJECT_DIR$/handlers/main.js" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/views/common.jade" />
         <option value="$PROJECT_DIR$/public/javascripts/common.js" />
-        <option value="$PROJECT_DIR$/handlers/users.js" />
         <option value="$PROJECT_DIR$/public/javascripts/picwall.js" />
+        <option value="$PROJECT_DIR$/routes/index.js" />
+        <option value="$PROJECT_DIR$/handlers/main.js" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/handlers/users.js" />
         <option value="$PROJECT_DIR$/routes.js" />
       </list>
     </option>
@@ -465,7 +299,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1370" />
+    <option name="width" value="1382" />
     <option name="height" value="754" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -491,7 +325,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -521,7 +354,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="routes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -539,14 +372,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="leimu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="leimu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/博客" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="82" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="82" />
@@ -774,7 +626,13 @@
       <option name="project" value="LOCAL" />
       <updated>1477270577895</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="增加angular后台管理，和手机端首页">
+      <created>1479113951522</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1479113951522</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TodoView">
@@ -787,16 +645,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1370" height="754" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26276276" sideWeight="0.4915254" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26264882" sideWeight="0.4915254" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284553" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="版本控制" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.414791" sideWeight="0.49699247" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.021138212" sideWeight="0.50300753" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="消息" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279743" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24887218" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284553" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279743" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962406" sideWeight="0.5084746" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="调试" active="false" anchor="bottom" auto_hide="true" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.3284553" sideWeight="0.5" order="12" side_tool="false" content_ui="combo" />
@@ -806,8 +665,7 @@
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284553" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
-      <window_info id="消息" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284553" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1691057" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49678457" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -836,8 +694,11 @@
     <MESSAGE value="添加的管理员页面，功能用于审核图片，通过ajax请求服务器将用户上传的图片的pass标示改为1即通过审核，0为未审核。通过审核的图片才可展示在主站页面中。" />
     <MESSAGE value="a" />
     <MESSAGE value="增加了图片和头像裁剪功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加了图片和头像裁剪功能" />
+    <MESSAGE value="增加angular后台管理，和手机端首页" />
+    <MESSAGE value="0.0.8版" />
+    <option name="LAST_COMMIT_MESSAGE" value="0.0.8版" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -846,21 +707,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/mreg.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/leimu.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/html5-schema/html5/block.rnc">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="3.2773972">
@@ -1056,7 +902,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="343" column="10" selection-start-line="343" selection-start-column="10" selection-end-line="343" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1098,30 +943,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/touxiang.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="20" selection-start-line="17" selection-start-column="15" selection-end-line="39" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="127" column="21" selection-start-line="127" selection-start-column="21" selection-end-line="127" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="211" column="43" selection-start-line="211" selection-start-column="43" selection-end-line="211" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/city.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1144,14 +965,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/common.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1164,29 +977,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/reg.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14839798">
+        <state vertical-scroll-proportion="0.0">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/handlers/users.js">
+    <entry file="file://$PROJECT_DIR$/routes/users.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="251" column="0" selection-start-line="251" selection-start-column="0" selection-end-line="252" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#38#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#38#0" expanded="false" />
-          </folding>
+          <caret line="127" column="21" selection-start-line="127" selection-start-column="21" selection-end-line="127" selection-end-column="40" />
         </state>
       </provider>
     </entry>
@@ -1194,7 +994,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1206,29 +1005,85 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/handlers/main.js">
+    <entry file="file://$PROJECT_DIR$/views/touxiang.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#38#0" expanded="false" />
-          </folding>
+          <caret line="45" column="49" selection-start-line="45" selection-start-column="49" selection-end-line="45" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/html/admin.html">
+    <entry file="file://$PROJECT_DIR$/public/html/2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="29.586206">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/html/1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/mindex.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4806071">
-          <caret line="32" column="69" selection-start-line="32" selection-start-column="69" selection-end-line="32" selection-end-column="69" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="45" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/html/admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="44" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4064081">
+          <caret line="54" column="32" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/handlers/users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="173" column="247" selection-start-line="173" selection-start-column="247" selection-end-line="173" selection-end-column="247" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/handlers/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding>
+            <marker date="1479610580172" expanded="false" signature="0:4" placeholder="/** Created by pl on 2016/11/1. ...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.70320404">
+          <caret line="44" column="1" selection-start-line="44" selection-start-column="1" selection-end-line="44" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#38#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
