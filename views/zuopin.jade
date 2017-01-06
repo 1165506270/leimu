@@ -13,7 +13,7 @@ block banner
                -for(var j = 0;j<6&&i+j<data.length;j++){
                   div
                      a(href="by#{data[i+j].uid}")
-                        img(src="/tupianku/small/#{data[i+j].url}")
+                        img(src="http://og0ymg87t.bkt.clouddn.com/#{data[i+j].url}-pic")
                -}
          -}
    script(src="/javascripts/banner.js")
@@ -30,12 +30,11 @@ block zuopin
                   .news-item
                      a(href="by#{item.uid}")
                         div
-                           img(src="/tupianku/small/#{item.url}")
+                           img(src="http://og0ymg87t.bkt.clouddn.com/#{item.url}-pic")
                         p=item.title
             .news-liulan
                a(href="/liulan")
                   div 进入浏览模式 >
-   script(src="/javascripts/zuopin.js")
       //-var content =[{src:'2e3bc5bf943ceef3970f6ef8497c7b6051084f1f.jpg',title:"坐享时光"},{src:"3d77beacc655674fe1997029993c9e17c53c4a91.jpg",title:"坐享时光"},{src:'4acc251790ccd95390cd1099ccb613c4f3bd2ae8.jpg',title:"坐享时光"},{src:'2e3bc5bf943ceef3970f6ef8497c7b6051084f1f.jpg',title:"坐享时光"},{src:'8e7261fd263bf9f67c857954ad05963ff84b1a8c.jpg',title:"坐享时光"},{src:'9a366a2bdcd48264b8cef3f34bfbcf39978c3695.jpg',title:"坐享时光"},{src:'9f356b2f0df43df91f131b21cc0bbc2f55e206ea.jpg',title:"坐享时光"},{src:'2e3bc5bf943ceef3970f6ef8497c7b6051084f1f.jpg',title:"坐享时光"},{src:'2e3bc5bf943ceef3970f6ef8497c7b6051084f1f.jpg',title:"坐享时光"},{src:"3d77beacc655674fe1997029993c9e17c53c4a91.jpg",title:"坐享时光"},{src:'4acc251790ccd95390cd1099ccb613c4f3bd2ae8.jpg',title:"坐享时光"},{src:'2e3bc5bf943ceef3970f6ef8497c7b6051084f1f.jpg',title:"坐享时光"},{src:'8e7261fd263bf9f67c857954ad05963ff84b1a8c.jpg',title:"坐享时光"},{src:'9a366a2bdcd48264b8cef3f34bfbcf39978c3695.jpg',title:"坐享时光"},{src:'9f356b2f0df43df91f131b21cc0bbc2f55e206ea.jpg',title:"坐享时光"}]
       //each item in content
       //   .news-item
